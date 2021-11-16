@@ -3,7 +3,7 @@
 #navbar {
     display: grid;
     grid-template-areas: "logo enlaces botones";
-    grid-template-rows: 4rem;
+    grid-template-rows: 5rem;
     grid-template-columns: 2fr 7fr 2fr;
     position: fixed;
     top: 0rem;

@@ -10,7 +10,7 @@
   scroll-behavior: smooth; }
 
 body {
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 /* PARTIALS */
 /* CLASES GENÉRICAS */
@@ -41,7 +41,7 @@ body {
 #navbar {
   display: grid;
   grid-template-areas: "logo enlaces botones";
-  grid-template-rows: 4rem;
+  grid-template-rows: 5rem;
   grid-template-columns: 2fr 7fr 2fr;
   position: fixed;
   top: 0rem;
@@ -152,6 +152,11 @@ body {
     #principal #portada .sombra {
       overflow: hidden;
       background-color: rgba(0, 0, 0, 0.3); }
+      #principal #portada .sombra #trailer {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative; }
       #principal #portada .sombra video {
         position: absolute;
         margin: auto;
@@ -161,7 +166,7 @@ body {
         height: auto;
         z-index: -4; }
       #principal #portada .sombra .titular {
-        padding: 4rem 0rem 2rem 4rem;
+        padding: 6rem 0rem 2rem 4rem;
         width: 100%; }
       #principal #portada .sombra h1 {
         margin: 1rem 0rem;
@@ -234,8 +239,8 @@ body {
         /* margin-top: 3rem; */ }
         #principal #portada .sombra button a {
           color: #222222;
-          font-size: 1.4rem;
-          padding: 1rem 3rem; }
+          font-size: 1.2rem;
+          padding: 1rem 2rem; }
       #principal #portada .sombra button:hover {
         background-color: #ff684e; }
   #principal .base {

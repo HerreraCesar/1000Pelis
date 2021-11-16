@@ -44,37 +44,25 @@ movies.push (new pelicula ("17","Spider-Man","Sam Raimi",2002,"Fantástico",121,
 movies.push (new pelicula ("18","The Avengers","Joss Whedon",2012,"Fantástico",135,"Estados Unidos","Marvel Cinematic Universe",8.0,6.9,9.1));
 
 
-// Guardo el array localmente
-localStorage.setItem("listaPeliculas",JSON.stringify(movies))
-
 // PELICULA AL AZAR
-let poster = document.getElementById('poster');
-let id = document.getElementById('id');
-let nombre = document.getElementById('nombre');
-let director = document.getElementById('director');
-let año = document.getElementById('año');
-let imdb = document.getElementById('imdb');
-let filmaffinity = document.getElementById('filmaffinity');
-let rottentomatoes = document.getElementById('rottentomatoes');
-let activador = document.getElementById('suerte');
-activador.addEventListener('click',sortear);
-function sortear() {
+$('#suerte').click(function() {
     let luck = random();
     // Compruebo el idioma de la página para referenciar la imágen
     if (check.checked == false) {
-        poster.setAttribute('src',`media/posters/${luck}.jpg`);
+        $('#poster').attr('src',`media/posters/${luck}.jpg`);
     }
     else {
-        poster.setAttribute('src',`../../media/posters/${luck}.jpg`);
+        $('#poster').attr('src',`../../media/posters/${luck}.jpg`);
     }
-    id.innerHTML = `#${luck}`;
-    nombre.innerHTML = movies[luck-1].titulo;
-    director.innerHTML = movies[luck-1].director;
-    año.innerHTML = movies[luck-1].año;
-    imdb.innerHTML = movies[luck-1].imdb;
-    filmaffinity.innerHTML = movies[luck-1].filmaffinity;
-    rottentomatoes.innerHTML = movies[luck-1].rottentomatoes;
-}
+    $('#id').html(`#${luck}`);
+    $('#nombre').html(movies[luck-1].titulo);
+    $('#director').html(movies[luck-1].director);
+    $('#año').html(movies[luck-1].año);
+    $('#imdb').html(movies[luck-1].imdb);
+    $('#filmaffinity').html(movies[luck-1].filmaffinity);
+    $('#rottentomatoes').html(movies[luck-1].rottentomatoes);
+});
+
 function random() {
     const min = 1;
     const max = movies.length;
@@ -84,48 +72,49 @@ function random() {
 
 // SCROLLSPY
 let section = document.querySelectorAll('main div section');
-let navLinks = document.querySelectorAll('nav a');
 window.onscroll = () => {
     section.forEach(i => {
         let top = window.scrollY;
-        let offset = i.offsetTop - 300;
+        let offset = i.offsetTop - 150;
         let height = i.offsetHeight;
         let id = i.getAttribute('id');
         if (top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('nav a[href*=' + id + ']').classList.add('active');
-            })
+            $('nav a').removeClass('active');
+            $(`nav a[href*=${id}]`).addClass('active');
         }
     })
 }
 
 
 // MULTILANGUAGE
-let check = document.querySelector('.check');
-check.addEventListener('click', idioma);
-function idioma () {
-    let id = check.checked;
-    if (id == true) {
+$('.check').click( function() {
+    if ($('.check').prop('checked') == true) {
         location.href='pages/en/index.html';
     }
     else {
         location.href="../../index.html";
     }
-}
+})
+
+// Guardo el idioma localmente
+/* localStorage.setItem("idioma",JSON.stringify(check)); */
 
 
 // OFF-CANVAS
-const btn = document.querySelector('#menuFiltro');
+/* const btn = document.querySelector('#menuFiltro');
 const main = document.querySelector('#lista');
 btn.addEventListener('click',abrirMenu);
 function abrirMenu() {
     main.classList.toggle('showMenu');
-}
+} */
+
+$('#menuFiltro').click(function() {
+    $('#lista').toggleClass('showMenu');
+})
 
 
 // FULL PAGE SCROLL
-let cuerpoPrincipal = document.querySelector('body');
+/* let cuerpoPrincipal = document.querySelector('body');
 cuerpoPrincipal.addEventListener('wheel',avanzar);
 function avanzar(e) {
     let delta = e.wheelDeltaY;
@@ -135,7 +124,7 @@ function avanzar(e) {
     else if (delta > 0) {
         window.scrollBy(0, -window.innerHeight);
     }
-}
+} */
 
 // POP-UP
 let redes = document.querySelectorAll('.red');

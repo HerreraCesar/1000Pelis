@@ -1,0 +1,117 @@
+@import "variables";
+
+#recomendar {
+    grid-area: recomendar;
+    background-image: url(../media/backgrounds/background_5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .sombra {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.2fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "poster datos frase";
+        .dia {
+            grid-area: poster;
+            margin: auto;
+            position: relative;
+            #poster {
+                width: auto;
+                height: 30rem;
+            }
+        }
+        .datos {
+            grid-area: datos;
+            margin: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            margin-left: -3rem;
+            margin-right: 2rem;
+            height: 27rem;
+            div #id {
+                font-size: 4rem;
+                color: $light;
+                font-weight: 600;
+            }
+            div #nombre {
+                font-size: 2.8rem;
+                font-weight: 400;
+                color: $light2;
+            }
+            div div {
+                #director {
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                    color: rgb(182, 182, 182);
+                    display: inline;
+                    margin-right: 1rem;
+                }
+                #año {
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                    color: $light;
+                    display: inline;
+                }
+            }
+            div div .logos{
+                height: 1.4rem;
+                margin-right: 2rem;
+            }
+            div div .puntuacion {
+                font-size: 1.4rem;
+                font-weight: 500;
+                color: $focus;
+                text-align: center;
+                margin-right: 2rem;
+            }
+        }
+        .frase {
+            grid-area: frase;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: flex-end;
+            justify-content: center;
+            margin: auto;
+            margin-right: 6rem;
+            margin-left: 1rem;
+            border-right: 1px solid white;
+            height: 30rem;
+            padding-right: 2rem;
+            h3 {
+                font-size: 3rem;
+                font-weight: 100;
+                color: $light;
+                font-style: italic;
+                text-shadow: 0 0 1rem $focus, 0 0 0.2rem $focus;
+                line-height: 1.1;
+                text-align: right;
+            }
+            p {
+                margin-top: 4rem;
+                margin-bottom: 4rem;
+                font-size: 1.2rem;
+                font-weight: 200;
+                color: $light;
+                line-height: 1.5;
+                text-align: right;
+            }
+            .botones {
+                font-size: 1.2rem;
+                font-style: italic;
+                background-color: $light2;
+                height: auto;
+                padding: 0.5rem 1rem;
+                border-radius: 1.5rem;
+                width: 60%;
+                margin: initial;
+            }
+            .botones:hover {
+                background-color: $focus;
+                color: $dark;
+            }
+        }
+    }
+    
+    
+    
+}

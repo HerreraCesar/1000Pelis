@@ -1,0 +1,134 @@
+@import "variables";
+
+#portada {
+    grid-area: portada;
+    .sombra {
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.3);
+        video {
+            position: absolute;
+            margin: auto;
+            margin-top: -10%;
+            margin-left: -10%;
+            width: 120%;
+            height: auto;
+            z-index: -4;
+        }
+        .titular {
+        padding: 4rem 0rem 2rem 4rem;
+        width: 100%;
+        }
+        h1 {
+            
+            margin: 1rem 0rem;
+            padding: 0.2rem 1rem;
+            width: fit-content;
+            position: relative;
+            font-size: 3rem;
+            font-weight: 200;
+            color: $light;
+            font-style: italic;
+            text-shadow: 0 0 1rem $focus, 0 0 0.2rem $focus;
+            line-height: 1.2;
+            z-index: 1;
+            span {
+                color: $light;
+                font-weight: 700;
+            }
+        }
+        h1::before {
+            content: '';
+            height: 100%;
+            position: absolute;
+            left: 0;
+            background-color: hsla(9, 100%, 65%, 0.7);
+            z-index: -1;
+        }
+        #one::before {
+            animation: resaltador_one 1.5s ;
+            animation-fill-mode: forwards;
+            animation-delay: 1s;
+        }
+        #two::before {
+            animation: resaltador_one 1.5s ;
+            animation-fill-mode: forwards;
+            animation-delay: 3s;
+        }#three::before {
+            animation: resaltador_one 1.5s ;
+            animation-fill-mode: forwards;
+            animation-delay: 5s;
+        }
+        @keyframes resaltador_one {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        @keyframes two {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        @keyframes resaltador_three {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        .subtitular {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+        }
+        h2 {
+            padding-left: 4rem;
+            font-size: 1.2rem;
+            color: $light;
+            font-weight: 300;
+            width: 100%;
+        }
+        button {
+            height: 3rem;
+            width: fit-content;
+            border-radius: 2rem;
+            margin: 4rem 0rem 4rem 4rem;
+            /* margin: auto; */
+            /* margin-top: 3rem; */
+            a {
+                color: $dark2;
+                font-size: 1.4rem;
+                padding: 1rem 3rem;
+            }
+        }
+        button:hover {
+            background-color: $focus;
+        }
+    }
+}
+.base {
+    width: 75vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    /* background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgb(13, 13, 14) 0%, rgba(18, 33, 49, 0.70) 50%, rgba(221,221,221,0) 100%); */
+    /* background-image: linear-gradient(to left, #30d0d000 0%, #330867 100%); */
+    background-image: linear-gradient(to left, rgba(104, 79, 214, 0) 0%, rgba(10, 0, 48, 0.9) 100% );
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    /* backdrop-filter: blur($blur); */
+    /* margin-top: 25vh; */
+    /* box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.9); */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    /* align-items: center; */
+}

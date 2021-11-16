@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="media/logos/favicon.png" type="">
+    <title>1000 Peliculas que debes ver antes de morir</title>
+</head>
+
+<body>
+    <!-- BARRA NAVEGACION -->
+    <header id="navbar">
+        <!-- LOGO -->
+        <div id="logo">
+            <a href="index.html#principal">1000 Pelis</a>
+        </div>
+        <!-- ENLACES -->
+        <nav id="enlaces" class="orden">
+            <a class="active" href="index.html#portada">Inicio</a>
+            <a href="index.html#recomendar">Recomendaciones</a>
+            <a href="index.html#categorias">Géneros</a>
+            <a href="index.html#lista">Lista</a>
+            <a href="index.html#aportes">Contribuciones</a>
+            <a href="index.html#footer">Contacto</a>
+        </nav>
+        <!-- BOTONES -->
+        <div id="botones" class="orden">
+            <div>
+                <i class="fas fa-search"></i>
+            </div>
+            <div>
+                <input class="check" type="checkbox">
+            </div>
+        </div>
+    </header>  
+    <!-- PRINCIPAL -->
+    <main>
+        <div id="principal">
+            <!-- PORTADA -->
+            <section id="portada">
+                <div class="sombra">
+                    <div id="trailer"></div>
+                    <div class="base">
+                        <div class="titular">
+                            <h1 id="one">Tenemos una lista de <span>+1000</span> peliculas</h1>
+                            <h1 id="two"> para que el momento de elegir</h1> 
+                            <h1 id="three">no sea nunca más un problema.</h1> 
+                        </div>
+                        <div class="subtitular">
+                            <h2>Podés elegir según género o usar nuestros filtros para tener una busqueda personalizada.</h2>
+                            <button class="botones" type="submit"><a href="index.html#lista">Ver lista completa</a></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- BOTON PARA VOLVER ARRIBA -->
+            <div class="to_top">
+                <a href="index.html#principal">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+            <!-- RECOMENDACIONES -->
+            <section id="recomendar">
+                <div class="sombra">
+                    <div class="dia">
+                        <a href="">
+                            <img id="poster" src="media/posters/3.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="datos">
+                        <div>
+                            <p id="id">#3</p>
+                            <p id="nombre">Jurassic Park</p>
+                            <div>
+                                <p id="director">Steven Spielberg</p>
+                                <p id="año">1993</p>
+                            </div>
+                        </div>
+                        <div class="orden">
+                            <div>
+                                <img class="logos" src="media/logos/imdb.png" alt="">
+                                <p class="puntuacion" id="imdb">8.1</p>
+                            </div>
+                            <div>
+                                <img class="logos" src="media/logos/filmaffinity.png" alt="">
+                                <p class="puntuacion" id="filmaffinity">7.0</p>
+                            </div>
+                            <div>
+                                <img class="logos" src="media/logos/rottentomatoes.png" alt="">
+                                <p class="puntuacion" id="rottentomatoes">9.1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frase">
+                        <h3>RECOMENDACIÓN DEL DÍA</h3>
+                        <p>¿No sabes que película ver? <br> Con nuestro sistema te recomendaremos una al azar para ver hoy, probalo ahora gratis haciendo clic en el botón <i class="far fa-arrow-alt-circle-down"></i></p>
+                        <button class="botones" id="suerte" type="button">Voy a tener suerte</button>
+                    </div>
+                </div>
+            </section>
+            <!-- CATEGORIAS -->
+            <section id="categorias">
+                <div class="sombra">
+                    <ul id="generos">
+                        <div class="borde_1">
+                            <li class="accion">
+                                <a href="#" class="subtitulo"><span>ACCIÓN</span></a>
+                            </li>
+                        </div>
+                        <div class="borde_2">
+                            <li class="animadas">
+                                <a href="#" class="subtitulo"><span>ANIMACIÓN</span></a>
+                            </li>
+                        </div>
+                        <div class="borde_3">
+                            <li class="belico">
+                                <a href="#" class="subtitulo"><span>BÉLICA</span></a>
+                            </li>
+                        </div>
+                        <div class="borde_4">
+                            <li class="ciencia_ficcion">
+                                <a href="#" class="subtitulo"><span>CIENCIA FICCIÓN</span></a>
+                            </li>
+                        </div>
+                        <div class="borde_5">
+                            <li class="comedia">
+                                <a href="#" class="subtitulo"><span>COMEDIA</span></a>
+                            </li>
+                        </div>
+                        <div class="borde_6">
+                            <li class="crimen">
+                                <a href="#" class="subtitulo"><span>CRIMEN</span></a>
+                            </li>
+                        </div>
+                        <div class="borde_7">
+                            <li class="drama">
+                                <a href="#" class="subtitulo"><span>DRAMA</span></a>
+                            </li>
+                        </div>
+                        <div class="borde_8">
+                            <li class="fantasia">
+                                <a href="#" class="subtitulo"><span>FANTASÍA</span></a>
+                            </li>
+                        </div>
+                        <div class="borde_9">
+                            <li class="terror">
+                                <a href="#" class="subtitulo"><span>TERROR</span></a>
+                            </li>
+                        </div>
+                        <div class="borde_10">
+                            <li class="thriller">
+                                <a href="#" class="subtitulo"><span>THRILLER</span></a>
+                            </li>
+                        </div>
+                    </ul>
+                    <span class="gen">GÉNEROS</span>
+                </div>
+            </section>
+            <!-- LISTA COMPLETA -->
+            <section id="lista">
+                <div class="sombra">
+                    <div class="posters">
+                        <a id="c1" href="#">
+                            <div class="resaltado">
+                                <p><strong>ESPERANDO LA CARROZA</strong></p>
+                                <p>Alejandro Doria</p>
+                                <p>1985 • 87'</p>
+                            </div>
+                        </a>
+                        <a id="c2" href="#">
+                            <div  class="resaltado">
+                                <p><strong>EL CLAN</strong></p>
+                                <p>Pablo Trapero</p>
+                                <p>2015 • 110'</p>
+                            </div>
+                        </a>
+                        <a id="c3" href="#">
+                            <div  class="resaltado">
+                                <p><strong>JURASSIC PARK</strong></p>
+                                <p>Steven Spielberg</p>
+                                <p>1993 • 121'</p>
+                            </div>
+                        </a>
+                        <a id="c4" href="#">
+                            <div  class="resaltado">
+                                <p><strong>JOKER</strong></p>
+                                <p>Todd Phillips</p>
+                                <p>2019 • 121'</p>
+                            </div>
+                        </a>
+                        <a id="c5" href="#">
+                            <div  class="resaltado">
+                                <p><strong>NUEVE REINAS</strong></p>
+                                <p>Fabián Bielinsky</p>
+                                <p>2000 • 114'</p>
+                            </div>
+                        </a>
+                        <a id="c6" href="#">
+                            <div  class="resaltado">
+                                <p><strong>STAR WARS EPISODE IV: <br> A NEW HOPE</strong></p>
+                                <p>George Lucas</p>
+                                <p>1977 • 121'</p>
+                            </div>
+                        </a>
+                        <a id="c7" href="#">
+                            <div  class="resaltado">
+                                <p><strong>2001: A SPACE ODYSSEY</strong></p>
+                                <p>Stanley Kubrick</p>
+                                <p>1968 • 139'</p>
+                            </div>
+                        </a>
+                        <a id="c8" href="#">
+                            <div  class="resaltado">
+                                <p><strong>CARRIE</strong></p>
+                                <p>Brian De Palma</p>
+                                <p>1976 • 97'</p>
+                            </div>
+                        </a>
+                        <a id="c9" href="#">
+                            <div  class="resaltado">
+                                <p><strong>PARASITE</strong></p>
+                                <p>Bong Joon-ho</p>
+                                <p>2019 • 132'</p>
+                            </div>
+                        </a>
+                        <a id="c10" href="#">
+                            <div  class="resaltado">
+                                <p><strong>INGLORIOUS BASTERDS</strong></p>
+                                <p>Quentin Tarantino</p>
+                                <p>2009 • 146'</p>
+                            </div>
+                        </a>
+                        <a id="c11" href="#">
+                            <div  class="resaltado">
+                                <p><strong>IRON MAN</strong></p>
+                                <p>Jon Favreau</p>
+                                <p>2008 • 126'</p>
+                            </div>
+                        </a>
+                        <a id="c12" href="#">
+                            <div  class="resaltado">
+                                <p><strong>THE LORD OF THE RINGS: THE FELLOWSHIP OF THE RING</strong></p>
+                                <p>George Lucas</p>
+                                <p>1977 • 121'</p>
+                            </div>
+                        </a>
+                        <a id="c13" href="#">
+                            <div  class="resaltado">
+                                <p><strong>A CLOCKWORK ORANGE</strong></p>
+                                <p>Stanley Kubrick</p>
+                                <p>1971 • 137'</p>
+                            </div>
+                        </a>
+                        <a id="c14" href="#">
+                            <div  class="resaltado">
+                                <p><strong>FULL METAL JACKET</strong></p>
+                                <p>Stanley Kubrick</p>
+                                <p>1987 • 120'</p>
+                            </div>
+                        </a>
+                        <a id="c15" href="#">
+                            <div  class="resaltado">
+                                <p><strong>HARRY POTTER AND THE SORCERER'S STONE</strong></p>
+                                <p>Chris Columbus</p>
+                                <p>2001 • 152'</p>
+                            </div>
+                        </a>
+                        <a id="c16" href="#">
+                            <div  class="resaltado">
+                                <p><strong>MISERY</strong></p>
+                                <p>Rob Reiner</p>
+                                <p>1990 • 104'</p>
+                            </div>
+                        </a>
+                        <a id="c17" href="#">
+                            <div  class="resaltado">
+                                <p><strong>SPIDER-MAN</strong></p>
+                                <p>Sam Raimi</p>
+                                <p>2002 • 121'</p>
+                            </div>
+                        </a>
+                        <a id="c18" href="#">
+                            <div  class="resaltado">
+                                <p><strong>THE AVENGERS</strong></p>
+                                <p>Joss Whedon</p>
+                                <p>2012 • 135'</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="orden">
+                        <div id="menuFiltro" class="filtros"><a href="index.html#mil">FILTROS</a></div>
+                        <div class="verMas"><a href=""><i class="fas fa-plus"></i></a></i></div>
+                    </div>
+                </div>
+                <div id="baseFiltro">
+                    <div class="sombra">
+                        <ul>
+                            <li>
+                                <span>Género</span>
+                                <select name="" id="">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </li>
+                            <li>
+                                <span>Director</span>
+                                <select name="" id="">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </li>
+                            <li>
+                                <span>Grupo</span>
+                                <select name="" id="">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- CONTRIBUCIONES -->
+            <section id="aportes">
+                <div class="sombra">
+                    <div class="aporte">
+                        <h3>CONTRIBUCIONES</h3>
+                        <p>¿Te gustaría que agregaramos alguna película a nuestra lista? Déjanoslo saber completando nuestro formulario <i class="far fa-arrow-alt-circle-down"></i></p>
+                        <button class="botones" type="button"><a href="index.html#footer">Llévame al formulario</a></button>
+                    </div>
+                    <div class="box">
+                        <p class="oracion">Si te gustó nuestro proyecto podés ayudarnos a que siga creciendo y funcionando haciendo una donación en críptomonedas en alguna de estas redes:</p>
+                        <ul class="redes">
+                            <li class="red" id="btc">
+                                <img  class="moneda" src="media/logos/btc.png" alt="">
+                            </li>
+                            <li class="red" id="eth">
+                                <img class="moneda" src="media/logos/eth.png" alt="">
+                            </li>
+                            <li class="red" id="bsc">
+                                <img class="moneda" src="media/logos/bsc.png" alt="">
+                            </li>
+                            <li class="red" id="ltc">
+                                <img class="moneda" src="media/logos/ltc.png" alt="">
+                            </li>
+                            <li class="red" id="matic">
+                                <img class="moneda" src="media/logos/matic.png" alt="">
+                            </li>
+                            <li class="red" id="terra">
+                                <img class="moneda" src="media/logos/terra.png" alt="">
+                            </li>
+                            <li class="red" id="avax">
+                                <img class="moneda" src="media/logos/avax.png" alt="">
+                            </li>
+                            <li class="red" id="rune">
+                                <img class="moneda" src="media/logos/rune.png" alt="">
+                            </li>
+                            <div class="direccion">
+                                <span>Bitcoin</span>
+                                <img src="media/qr/bitcoin.jpeg" alt="">
+                                <p>bc1qte57jnflqsmwzl9lzkjxvxzallmmu2v03xq7qj</p>
+                            </div>
+                            <div class="direccion">
+                                <span>Ethereum</span>
+                                <img src="media/qr/ethereum.jpeg" alt="">
+                                <p>0xa1b7C25aBAf9f9bae06E266f5E488cd34393C7f6</p>
+                            </div>
+                            <div class="direccion">
+                                <span>Binance Smart Chain</span>
+                                <img src="media/qr/binance.jpeg" alt="">
+                                <p>0xa1b7C25aBAf9f9bae06E266f5E488cd34393C7f6</p>
+                            </div>
+                            <div class="direccion">
+                                <span>Litecoin</span>
+                                <img src="media/qr/litecoin.jpeg" alt="">
+                                <p>ltc1qvlpetdgvyj35ly6r9qt6rksv7ulg58292qvwx0</p>
+                            </div>
+                            <div class="direccion">
+                                <span>Polygon</span>
+                                <img src="media/qr/polygon.jpeg" alt="">
+                                <p>0xa1b7C25aBAf9f9bae06E266f5E488cd34393C7f6</p>
+                            </div>
+                            <div class="direccion">
+                                <span>Terra</span>
+                                <img src="media/qr/terra.jpeg" alt="">
+                                <p>terra1vk5sv6s24gcpnu7zvkh584lw6xfvsckxcf2z37</p>
+                            </div>
+                            <div class="direccion">
+                                <span>Avalanche</span>
+                                <img src="media/qr/avalanche.jpeg" alt="">
+                                <p>0xa1b7C25aBAf9f9bae06E266f5E488cd34393C7f6</p>
+                            </div>
+                            <div class="direccion">
+                                <span>THORChain</span>
+                                <img src="media/qr/rune.jpeg" alt="">
+                                <p>thor1pkgsm4lfqsajh7ykjxmg4ucr5ykahwzyjx2net</p>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- PIE DE PAGINA -->
+            <section id="footer">
+                <div class="sombra">
+                    <form action="https://formspree.io/f/xdoyqkvy" method="post">
+                        <input type="text" name="name" placeholder="Nombre">
+                        <input type="email" name="_replyto" placeholder="Correo electrónico">
+                        <textarea name="message" placeholder="Mensaje"></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                    <p>Copyright © 2021 - 1000Pelis. Todos los derechos reservados.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- SCRIPTS-->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

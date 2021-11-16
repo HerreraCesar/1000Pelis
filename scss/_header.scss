@@ -1,0 +1,121 @@
+@import "variables";
+
+#navbar {
+    display: grid;
+    grid-template-areas: "logo enlaces botones";
+    grid-template-rows: 4rem;
+    grid-template-columns: 2fr 7fr 2fr;
+    position: fixed;
+    top: 0rem;
+    width: 100vw;
+    z-index: 5;
+    /* LOGO */
+    #logo {
+        grid-area: logo;
+        margin: auto;
+        a {
+            color: transparent;
+            font-weight: 900;
+            font-size: 2rem;
+            position: relative;
+            width: 5rem;
+            background-image: url(../media/backgrounds/background_17.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all 1s ease-in-out;
+            background-position: -250px 0%;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+        a:hover {
+            transition: all 1s ease-in-out;
+            background-position: 0% 0%;
+        }
+    }
+    /* ENLACES */
+    #enlaces {
+        grid-area: enlaces;
+        margin: auto;
+        margin-top: 1.3rem;
+        a {
+            position: relative;
+            color: $light2;
+            margin-right: 2rem;
+            font-weight: 300;
+            padding-bottom: 0.5rem;
+        }
+        a::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 100%;
+            height: 3px;
+            opacity: 0;
+            background-color: $light2;
+        }
+        a:hover::before {
+            transition: 0.5s all ease-in-out;
+            left: 0;
+            right: 0;
+            opacity: 1;
+            z-index: -1;
+        }
+        .active {
+            color: $focus;
+            font-weight: 600;
+        }
+    }
+    /* BOTONES */
+    #botones {
+        grid-area: botones;
+        margin: auto;
+        align-items: center;
+        div i {
+            font-size: 1.5rem;
+            color: $light;
+            margin: 0.5rem;
+            cursor: pointer;
+        }
+        div i:hover {
+            color: $focus;
+        }
+        .check {
+            position: relative;
+            width: 2rem;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+            margin-right: 2rem;
+            cursor: pointer;
+        }
+        .check::before {
+            content: '';
+            position: absolute;
+            width: 3rem;
+            height: 1.5rem;
+            background-color: $light2;
+            border-radius: 1.5rem;
+        }
+        .check:checked::before {
+            background: $focus;
+        }
+        .check::after {
+            content: "ES";
+            padding-left: 0.15rem;
+            font-weight: 500;
+            position: absolute;
+            font-size: 0.75rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: $light;
+            border-radius: 1rem;
+            border: 2px solid $light2;
+            box-sizing: border-box;
+        }
+        .check:checked::after {
+            left: 1.5rem;
+            border: 2px solid $focus;
+            content: 'EN';
+        }
+    }
+}

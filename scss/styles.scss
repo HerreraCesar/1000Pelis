@@ -1,0 +1,65 @@
+/*Estilos globales*/
+* {
+    margin: 0rem;
+    padding: 0rem;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+body {
+    overflow: hidden;
+}
+
+
+/* PARTIALS */
+@import "variables";
+@import "responsivity";
+
+
+/* CLASES GENÉRICAS */
+.sombra {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+}
+.orden {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.botones {
+    height: 2rem;
+    background-color: $light2;
+    color: $dark2;
+    margin: auto;
+    border: none;
+    border-radius: $curve;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+.botones:hover {
+    background-color: $focus;
+    color: $dark2;
+}
+
+
+/* BARRA NAVEGACIÓN */
+@import "header";
+
+
+/* PRINCIPAL */
+#principal {
+    display: grid;
+    grid-template-areas: "portada" "arriba" "recomendar" "categorias" "lista" "aportes" "footer";
+    grid-template-rows: 100vh 0rem 100vh 100vh 100vh 100vh 100vh;
+    grid-template-columns: 1fr;
+    @import "portada";
+    @import "arriba";
+    @import "recomendar";
+    @import "categorias";
+    @import "lista";
+    @import "aportes";
+    @import "footer";
+}
+

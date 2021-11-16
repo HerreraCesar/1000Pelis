@@ -1,0 +1,69 @@
+@import "variables";
+
+#categorias {
+    grid-area: categorias;
+    background-image: url(../media/backgrounds/background_4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    #generos {
+        padding-top: 10rem;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 25rem;
+        @each $letra, $genero in $generos  {
+            .borde_#{$letra} {
+                border: 0.25rem solid transparent;
+                .#{$genero} {
+                    background-image: url(../media/genres/#{$genero}.jpg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    filter: brightness(70%) saturate(40%);
+                    width: 100%;
+                    height: 100%;
+                    .subtitulo {
+                        width: 100%;
+                        height: 100%;
+                        display: none;
+                    }
+                }
+            }
+            .borde_#{$letra}:hover {
+                height: 100%;
+                width: 40rem;
+                .#{$genero} {
+                    filter: brightness(100%) saturate(100%);
+                }
+                .subtitulo {
+                    position: absolute;
+                    display: inline;
+                    color: $light2;
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                    text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8);
+                    span {
+                        position: absolute;
+                        right: 5rem;
+                        bottom: 3rem;
+                    }
+                }
+            }
+        }
+        @each $genero, $porcentaje in $posiciones {
+            .#{$genero} {
+                background-position: #{$porcentaje} 0%;
+            }
+        }
+    }
+    .gen {
+        font-size: 3rem;
+        font-weight: 100;
+        color: $light;
+        font-style: italic;
+        text-shadow: 0 0 1rem $focus, 0 0 0.2rem $focus;
+        line-height: 1.1;
+        position: absolute;
+        padding-left: 4rem;
+        margin-top: 3rem;
+        z-index: 3;
+    }
+}

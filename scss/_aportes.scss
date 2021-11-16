@@ -1,0 +1,156 @@
+@import "variables";
+
+#aportes {
+    grid-area: aportes;
+    background-image: url(../media/backgrounds/background_15.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .sombra {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "sugerencias donaciones";
+        .aporte {
+            grid-area: sugerencias;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            margin: auto;
+            margin-left: 6rem;
+            margin-right: 1rem;
+            border-left: 1px solid white;
+            width: 30rem;
+            height: 30rem;
+            padding-left: 2rem;
+            h3 {
+                font-size: 3rem;
+                font-weight: 100;
+                color: $light;
+                font-style: italic;
+                text-shadow: 0 0 1rem $focus, 0 0 0.2rem $focus;
+                line-height: 1.1;
+            }
+            p {
+                margin-top: 4rem;
+                margin-bottom: 4rem;
+                font-size: 1.2rem;
+                font-weight: 200;
+                color: $light;
+                line-height: 1.5;
+            }
+            .botones {
+                font-size: 1.2rem;
+                font-style: italic;
+                background-color: $light2;
+                height: auto;
+                padding: 0.5rem 1rem;
+                border-radius: 1.5rem;
+                width: 60%;
+                margin: initial;
+                a {
+                    color: $dark;
+                }
+            }
+            .botones:hover {
+                background-color: $focus;
+            }
+        }
+        .box {
+            grid-area: donaciones;
+            margin: auto;
+            border: 1px solid $light;
+            width: 30rem;
+            height: 30rem;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            .oracion {
+                margin: 2rem 2rem 1.5rem 2rem;
+                font-size: 1.2rem;
+                font-weight: 200;
+                color: $light;
+                line-height: 1.5;
+            }
+            .redes {
+                width: 85%;
+                z-index: 2;
+                display: flex;
+                flex-flow: row wrap;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                .red {
+                    margin: 0.6rem;
+                    margin-top: 2.5rem;
+                    position: relative;
+                    .moneda {
+                        width: 5rem;
+                        height: auto;
+                        filter: saturate(20%);
+                        cursor: pointer;
+                        transition: all 0.5s;
+                    }
+                    .moneda:hover {
+                        filter: saturate(100%);
+                    }
+                    
+                }
+                
+            }
+        }
+    }
+}
+.direccion {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    height: 30rem;
+    width: 30rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur($blur);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    transform: translateY(-31rem);
+    border-bottom: 5px solid $light2;
+    z-index: 10;
+    p {
+        color: $light2;
+        font-size: 1rem;
+        margin-top: 3.5rem;
+    }
+    img {
+        width: 12rem;
+    };
+    span {
+        font-size: 2.2rem;
+        color: $light;
+        padding-bottom: 3rem;
+    }
+}
+.abierto{
+    transform: translateY(0%);
+}
+@each $ticker,$moneda in $cryptos {
+    ##{$ticker}::before {
+        position: absolute;
+        content: $moneda;
+        background-color: $light2;
+        border-radius: 1rem;
+        padding: 0.2rem 0.75rem;
+        width: max-content;
+        height: 1.5rem;
+        top: -0.75rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%) scale(0%);
+        color: $dark2;
+        transition: 0.5s;
+    }
+    ##{$ticker}:hover::before {
+        transform: translateX(-50%) translateY(-100%) scale(100%);
+    }
+}

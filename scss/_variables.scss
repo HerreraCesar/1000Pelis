@@ -1,0 +1,41 @@
+$focus: #ff684e;
+$light: #ffffff;
+$light2: #dddddd;
+$dark: #000000;
+$dark2: #222222;
+$curve: 1rem;
+$blur: 10px;
+$generos: (
+    "1": "accion",
+    "2": "animadas",
+    "3": "belico",
+    "4": "ciencia_ficcion",
+    "5": "comedia",
+    "6": "crimen",
+    "7": "drama",
+    "8": "fantasia",
+    "9": "terror",
+    "10": "thriller"
+);
+$posiciones: (
+    "accion": "80%",
+    "animadas":"65%",
+    "belico":"55%",
+    "ciencia_ficcion":"75%",
+    "comedia":"30%",
+    "crimen":"15%",
+    "drama":"30%",
+    "fantasia":"55%",
+    "terror":"70%",
+    "thriller":"40%"
+);
+$cryptos: (
+    "btc":"Bitcoin",
+    "eth":"Ethereum",
+    "bsc":"Binance Smart Chain",
+    "ltc":"Litecoin",
+    "matic":"Polygon",
+    "terra":"Terra",
+    "avax":"Avalanche",
+    "rune":"THORChain",
+);

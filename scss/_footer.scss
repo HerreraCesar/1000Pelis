@@ -1,0 +1,43 @@
+@import "variables";
+
+#footer {
+    grid-area: footer;
+    background-color: $focus;
+    .sombra {
+        display: flex;
+        flex-flow: column nowrap;
+        p {
+            color: $light;
+            font-weight: 100;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        form {
+            display: flex;
+            flex-flow: column nowrap;
+            width: 60%;
+            margin: auto;
+            
+            textarea,
+            input {
+                background-color: transparent;
+                border: 3px solid $light;
+                color: $light;
+                padding: 1rem;
+                margin: 0.5rem;
+                font-size: 1.2rem;
+                outline: none;
+            }
+            textarea::placeholder,
+            input::placeholder {
+                color: rgba(136, 136, 136, 0.849);
+                font-size: 1.2rem;
+            }
+            input:focus,
+            textarea:focus {
+                background-color: rgba(255, 255, 255, 0.089);
+            }
+        }
+    }
+    
+}

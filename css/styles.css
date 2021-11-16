@@ -1,0 +1,2011 @@
+@charset "UTF-8";
+/*Estilos globales*/
+* {
+  margin: 0rem;
+  padding: 0rem;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth; }
+
+body {
+  overflow: hidden; }
+
+/* PARTIALS */
+/* CLASES GENÉRICAS */
+.sombra {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%; }
+
+.orden {
+  display: flex;
+  flex-flow: row nowrap; }
+
+.botones {
+  height: 2rem;
+  background-color: #dddddd;
+  color: #222222;
+  margin: auto;
+  border: none;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  cursor: pointer; }
+
+.botones:hover {
+  background-color: #ff684e;
+  color: #222222; }
+
+/* BARRA NAVEGACIÓN */
+#navbar {
+  display: grid;
+  grid-template-areas: "logo enlaces botones";
+  grid-template-rows: 4rem;
+  grid-template-columns: 2fr 7fr 2fr;
+  position: fixed;
+  top: 0rem;
+  width: 100vw;
+  z-index: 5;
+  /* LOGO */
+  /* ENLACES */
+  /* BOTONES */ }
+  #navbar #logo {
+    grid-area: logo;
+    margin: auto; }
+    #navbar #logo a {
+      color: transparent;
+      font-weight: 900;
+      font-size: 2rem;
+      position: relative;
+      width: 5rem;
+      background-image: url(../media/backgrounds/background_17.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all 1s ease-in-out;
+      background-position: -250px 0%;
+      background-clip: text;
+      -webkit-background-clip: text; }
+    #navbar #logo a:hover {
+      transition: all 1s ease-in-out;
+      background-position: 0% 0%; }
+  #navbar #enlaces {
+    grid-area: enlaces;
+    margin: auto;
+    margin-top: 1.3rem; }
+    #navbar #enlaces a {
+      position: relative;
+      color: #dddddd;
+      margin-right: 2rem;
+      font-weight: 300;
+      padding-bottom: 0.5rem; }
+    #navbar #enlaces a::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 100%;
+      height: 3px;
+      opacity: 0;
+      background-color: #dddddd; }
+    #navbar #enlaces a:hover::before {
+      transition: 0.5s all ease-in-out;
+      left: 0;
+      right: 0;
+      opacity: 1;
+      z-index: -1; }
+    #navbar #enlaces .active {
+      color: #ff684e;
+      font-weight: 600; }
+  #navbar #botones {
+    grid-area: botones;
+    margin: auto;
+    align-items: center; }
+    #navbar #botones div i {
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin: 0.5rem;
+      cursor: pointer; }
+    #navbar #botones div i:hover {
+      color: #ff684e; }
+    #navbar #botones .check {
+      position: relative;
+      width: 2rem;
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+      margin-right: 2rem;
+      cursor: pointer; }
+    #navbar #botones .check::before {
+      content: '';
+      position: absolute;
+      width: 3rem;
+      height: 1.5rem;
+      background-color: #dddddd;
+      border-radius: 1.5rem; }
+    #navbar #botones .check:checked::before {
+      background: #ff684e; }
+    #navbar #botones .check::after {
+      content: "ES";
+      padding-left: 0.15rem;
+      font-weight: 500;
+      position: absolute;
+      font-size: 0.75rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #ffffff;
+      border-radius: 1rem;
+      border: 2px solid #dddddd;
+      box-sizing: border-box; }
+    #navbar #botones .check:checked::after {
+      left: 1.5rem;
+      border: 2px solid #ff684e;
+      content: 'EN'; }
+
+/* PRINCIPAL */
+#principal {
+  display: grid;
+  grid-template-areas: "portada" "arriba" "recomendar" "categorias" "lista" "aportes" "footer";
+  grid-template-rows: 100vh 0rem 100vh 100vh 100vh 100vh 100vh;
+  grid-template-columns: 1fr; }
+  #principal #portada {
+    grid-area: portada; }
+    #principal #portada .sombra {
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.3); }
+      #principal #portada .sombra video {
+        position: absolute;
+        margin: auto;
+        margin-top: -10%;
+        margin-left: -10%;
+        width: 120%;
+        height: auto;
+        z-index: -4; }
+      #principal #portada .sombra .titular {
+        padding: 4rem 0rem 2rem 4rem;
+        width: 100%; }
+      #principal #portada .sombra h1 {
+        margin: 1rem 0rem;
+        padding: 0.2rem 1rem;
+        width: fit-content;
+        position: relative;
+        font-size: 3rem;
+        font-weight: 200;
+        color: #ffffff;
+        font-style: italic;
+        text-shadow: 0 0 1rem #ff684e, 0 0 0.2rem #ff684e;
+        line-height: 1.2;
+        z-index: 1; }
+        #principal #portada .sombra h1 span {
+          color: #ffffff;
+          font-weight: 700; }
+      #principal #portada .sombra h1::before {
+        content: '';
+        height: 100%;
+        position: absolute;
+        left: 0;
+        background-color: rgba(255, 103, 77, 0.7);
+        z-index: -1; }
+      #principal #portada .sombra #one::before {
+        animation: resaltador_one 1.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s; }
+      #principal #portada .sombra #two::before {
+        animation: resaltador_one 1.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 3s; }
+      #principal #portada .sombra #three::before {
+        animation: resaltador_one 1.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 5s; }
+
+@keyframes resaltador_one {
+  from {
+    width: 0%; }
+  to {
+    width: 100%; } }
+
+@keyframes two {
+  from {
+    width: 0%; }
+  to {
+    width: 100%; } }
+
+@keyframes resaltador_three {
+  from {
+    width: 0%; }
+  to {
+    width: 100%; } }
+      #principal #portada .sombra .subtitular {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start; }
+      #principal #portada .sombra h2 {
+        padding-left: 4rem;
+        font-size: 1.2rem;
+        color: #ffffff;
+        font-weight: 300;
+        width: 100%; }
+      #principal #portada .sombra button {
+        height: 3rem;
+        width: fit-content;
+        border-radius: 2rem;
+        margin: 4rem 0rem 4rem 4rem;
+        /* margin: auto; */
+        /* margin-top: 3rem; */ }
+        #principal #portada .sombra button a {
+          color: #222222;
+          font-size: 1.4rem;
+          padding: 1rem 3rem; }
+      #principal #portada .sombra button:hover {
+        background-color: #ff684e; }
+  #principal .base {
+    width: 75vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    /* background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgb(13, 13, 14) 0%, rgba(18, 33, 49, 0.70) 50%, rgba(221,221,221,0) 100%); */
+    /* background-image: linear-gradient(to left, #30d0d000 0%, #330867 100%); */
+    background-image: linear-gradient(to left, rgba(104, 79, 214, 0) 0%, rgba(10, 0, 48, 0.9) 100%);
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    /* backdrop-filter: blur($blur); */
+    /* margin-top: 25vh; */
+    /* box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.9); */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    /* align-items: center; */ }
+  #principal .to_top {
+    grid-area: arriba;
+    position: sticky;
+    top: 40rem;
+    margin-right: 5rem;
+    text-align: right;
+    z-index: 2; }
+    #principal .to_top i {
+      color: #ff684e;
+      font-size: 2rem;
+      transition: all 0.5s ease-in; }
+    #principal .to_top i:hover {
+      transform: translateY(-1rem); }
+  #principal #recomendar {
+    grid-area: recomendar;
+    background-image: url(../media/backgrounds/background_5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; }
+    #principal #recomendar .sombra {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "poster datos frase"; }
+      #principal #recomendar .sombra .dia {
+        grid-area: poster;
+        margin: auto;
+        position: relative; }
+        #principal #recomendar .sombra .dia #poster {
+          width: auto;
+          height: 30rem; }
+      #principal #recomendar .sombra .datos {
+        grid-area: datos;
+        margin: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        margin-left: -3rem;
+        margin-right: 2rem;
+        height: 27rem; }
+        #principal #recomendar .sombra .datos div #id {
+          font-size: 4rem;
+          color: #ffffff;
+          font-weight: 600; }
+        #principal #recomendar .sombra .datos div #nombre {
+          font-size: 2.8rem;
+          font-weight: 400;
+          color: #dddddd; }
+        #principal #recomendar .sombra .datos div div #director {
+          font-size: 1.5rem;
+          font-weight: 300;
+          color: #b6b6b6;
+          display: inline;
+          margin-right: 1rem; }
+        #principal #recomendar .sombra .datos div div #año {
+          font-size: 1.5rem;
+          font-weight: 300;
+          color: #ffffff;
+          display: inline; }
+        #principal #recomendar .sombra .datos div div .logos {
+          height: 1.4rem;
+          margin-right: 2rem; }
+        #principal #recomendar .sombra .datos div div .puntuacion {
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: #ff684e;
+          text-align: center;
+          margin-right: 2rem; }
+      #principal #recomendar .sombra .frase {
+        grid-area: frase;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-end;
+        justify-content: center;
+        margin: auto;
+        margin-right: 6rem;
+        margin-left: 1rem;
+        border-right: 1px solid white;
+        height: 30rem;
+        padding-right: 2rem; }
+        #principal #recomendar .sombra .frase h3 {
+          font-size: 3rem;
+          font-weight: 100;
+          color: #ffffff;
+          font-style: italic;
+          text-shadow: 0 0 1rem #ff684e, 0 0 0.2rem #ff684e;
+          line-height: 1.1;
+          text-align: right; }
+        #principal #recomendar .sombra .frase p {
+          margin-top: 4rem;
+          margin-bottom: 4rem;
+          font-size: 1.2rem;
+          font-weight: 200;
+          color: #ffffff;
+          line-height: 1.5;
+          text-align: right; }
+        #principal #recomendar .sombra .frase .botones {
+          font-size: 1.2rem;
+          font-style: italic;
+          background-color: #dddddd;
+          height: auto;
+          padding: 0.5rem 1rem;
+          border-radius: 1.5rem;
+          width: 60%;
+          margin: initial; }
+        #principal #recomendar .sombra .frase .botones:hover {
+          background-color: #ff684e;
+          color: #000000; }
+  #principal #categorias {
+    grid-area: categorias;
+    background-image: url(../media/backgrounds/background_4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; }
+    #principal #categorias #generos {
+      padding-top: 10rem;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: 25rem; }
+      #principal #categorias #generos .borde_1 {
+        border: 0.25rem solid transparent; }
+        #principal #categorias #generos .borde_1 .accion {
+          background-image: url(../media/genres/accion.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: brightness(70%) saturate(40%);
+          width: 100%;
+          height: 100%; }
+          #principal #categorias #generos .borde_1 .accion .subtitulo {
+            width: 100%;
+            height: 100%;
+            display: none; }
+      #principal #categorias #generos .borde_1:hover {
+        height: 100%;
+        width: 40rem; }
+        #principal #categorias #generos .borde_1:hover .accion {
+          filter: brightness(100%) saturate(100%); }
+        #principal #categorias #generos .borde_1:hover .subtitulo {
+          position: absolute;
+          display: inline;
+          color: #dddddd;
+          font-size: 2.5rem;
+          font-weight: 600;
+          text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8); }
+          #principal #categorias #generos .borde_1:hover .subtitulo span {
+            position: absolute;
+            right: 5rem;
+            bottom: 3rem; }
+      #principal #categorias #generos .borde_2 {
+        border: 0.25rem solid transparent; }
+        #principal #categorias #generos .borde_2 .animadas {
+          background-image: url(../media/genres/animadas.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: brightness(70%) saturate(40%);
+          width: 100%;
+          height: 100%; }
+          #principal #categorias #generos .borde_2 .animadas .subtitulo {
+            width: 100%;
+            height: 100%;
+            display: none; }
+      #principal #categorias #generos .borde_2:hover {
+        height: 100%;
+        width: 40rem; }
+        #principal #categorias #generos .borde_2:hover .animadas {
+          filter: brightness(100%) saturate(100%); }
+        #principal #categorias #generos .borde_2:hover .subtitulo {
+          position: absolute;
+          display: inline;
+          color: #dddddd;
+          font-size: 2.5rem;
+          font-weight: 600;
+          text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8); }
+          #principal #categorias #generos .borde_2:hover .subtitulo span {
+            position: absolute;
+            right: 5rem;
+            bottom: 3rem; }
+      #principal #categorias #generos .borde_3 {
+        border: 0.25rem solid transparent; }
+        #principal #categorias #generos .borde_3 .belico {
+          background-image: url(../media/genres/belico.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: brightness(70%) saturate(40%);
+          width: 100%;
+          height: 100%; }
+          #principal #categorias #generos .borde_3 .belico .subtitulo {
+            width: 100%;
+            height: 100%;
+            display: none; }
+      #principal #categorias #generos .borde_3:hover {
+        height: 100%;
+        width: 40rem; }
+        #principal #categorias #generos .borde_3:hover .belico {
+          filter: brightness(100%) saturate(100%); }
+        #principal #categorias #generos .borde_3:hover .subtitulo {
+          position: absolute;
+          display: inline;
+          color: #dddddd;
+          font-size: 2.5rem;
+          font-weight: 600;
+          text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8); }
+          #principal #categorias #generos .borde_3:hover .subtitulo span {
+            position: absolute;
+            right: 5rem;
+            bottom: 3rem; }
+      #principal #categorias #generos .borde_4 {
+        border: 0.25rem solid transparent; }
+        #principal #categorias #generos .borde_4 .ciencia_ficcion {
+          background-image: url(../media/genres/ciencia_ficcion.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: brightness(70%) saturate(40%);
+          width: 100%;
+          height: 100%; }
+          #principal #categorias #generos .borde_4 .ciencia_ficcion .subtitulo {
+            width: 100%;
+            height: 100%;
+            display: none; }
+      #principal #categorias #generos .borde_4:hover {
+        height: 100%;
+        width: 40rem; }
+        #principal #categorias #generos .borde_4:hover .ciencia_ficcion {
+          filter: brightness(100%) saturate(100%); }
+        #principal #categorias #generos .borde_4:hover .subtitulo {
+          position: absolute;
+          display: inline;
+          color: #dddddd;
+          font-size: 2.5rem;
+          font-weight: 600;
+          text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8); }
+          #principal #categorias #generos .borde_4:hover .subtitulo span {
+            position: absolute;
+            right: 5rem;
+            bottom: 3rem; }
+      #principal #categorias #generos .borde_5 {
+        border: 0.25rem solid transparent; }
+        #principal #categorias #generos .borde_5 .comedia {
+          background-image: url(../media/genres/comedia.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: brightness(70%) saturate(40%);
+          width: 100%;
+          height: 100%; }
+          #principal #categorias #generos .borde_5 .comedia .subtitulo {
+            width: 100%;
+            height: 100%;
+            display: none; }
+      #principal #categorias #generos .borde_5:hover {
+        height: 100%;
+        width: 40rem; }
+        #principal #categorias #generos .borde_5:hover .comedia {
+          filter: brightness(100%) saturate(100%); }
+        #principal #categorias #generos .borde_5:hover .subtitulo {
+          position: absolute;
+          display: inline;
+          color: #dddddd;
+          font-size: 2.5rem;
+          font-weight: 600;
+          text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8); }
+          #principal #categorias #generos .borde_5:hover .subtitulo span {
+            position: absolute;
+            right: 5rem;
+            bottom: 3rem; }
+      #principal #categorias #generos .borde_6 {
+        border: 0.25rem solid transparent; }
+        #principal #categorias #generos .borde_6 .crimen {
+          background-image: url(../media/genres/crimen.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: brightness(70%) saturate(40%);
+          width: 100%;
+          height: 100%; }
+          #principal #categorias #generos .borde_6 .crimen .subtitulo {
+            width: 100%;
+            height: 100%;
+            display: none; }
+      #principal #categorias #generos .borde_6:hover {
+        height: 100%;
+        width: 40rem; }
+        #principal #categorias #generos .borde_6:hover .crimen {
+          filter: brightness(100%) saturate(100%); }
+        #principal #categorias #generos .borde_6:hover .subtitulo {
+          position: absolute;
+          display: inline;
+          color: #dddddd;
+          font-size: 2.5rem;
+          font-weight: 600;
+          text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8); }
+          #principal #categorias #generos .borde_6:hover .subtitulo span {
+            position: absolute;
+            right: 5rem;
+            bottom: 3rem; }
+      #principal #categorias #generos .borde_7 {
+        border: 0.25rem solid transparent; }
+        #principal #categorias #generos .borde_7 .drama {
+          background-image: url(../media/genres/drama.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: brightness(70%) saturate(40%);
+          width: 100%;
+          height: 100%; }
+          #principal #categorias #generos .borde_7 .drama .subtitulo {
+            width: 100%;
+            height: 100%;
+            display: none; }
+      #principal #categorias #generos .borde_7:hover {
+        height: 100%;
+        width: 40rem; }
+        #principal #categorias #generos .borde_7:hover .drama {
+          filter: brightness(100%) saturate(100%); }
+        #principal #categorias #generos .borde_7:hover .subtitulo {
+          position: absolute;
+          display: inline;
+          color: #dddddd;
+          font-size: 2.5rem;
+          font-weight: 600;
+          text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8); }
+          #principal #categorias #generos .borde_7:hover .subtitulo span {
+            position: absolute;
+            right: 5rem;
+            bottom: 3rem; }
+      #principal #categorias #generos .borde_8 {
+        border: 0.25rem solid transparent; }
+        #principal #categorias #generos .borde_8 .fantasia {
+          background-image: url(../media/genres/fantasia.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: brightness(70%) saturate(40%);
+          width: 100%;
+          height: 100%; }
+          #principal #categorias #generos .borde_8 .fantasia .subtitulo {
+            width: 100%;
+            height: 100%;
+            display: none; }
+      #principal #categorias #generos .borde_8:hover {
+        height: 100%;
+        width: 40rem; }
+        #principal #categorias #generos .borde_8:hover .fantasia {
+          filter: brightness(100%) saturate(100%); }
+        #principal #categorias #generos .borde_8:hover .subtitulo {
+          position: absolute;
+          display: inline;
+          color: #dddddd;
+          font-size: 2.5rem;
+          font-weight: 600;
+          text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8); }
+          #principal #categorias #generos .borde_8:hover .subtitulo span {
+            position: absolute;
+            right: 5rem;
+            bottom: 3rem; }
+      #principal #categorias #generos .borde_9 {
+        border: 0.25rem solid transparent; }
+        #principal #categorias #generos .borde_9 .terror {
+          background-image: url(../media/genres/terror.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: brightness(70%) saturate(40%);
+          width: 100%;
+          height: 100%; }
+          #principal #categorias #generos .borde_9 .terror .subtitulo {
+            width: 100%;
+            height: 100%;
+            display: none; }
+      #principal #categorias #generos .borde_9:hover {
+        height: 100%;
+        width: 40rem; }
+        #principal #categorias #generos .borde_9:hover .terror {
+          filter: brightness(100%) saturate(100%); }
+        #principal #categorias #generos .borde_9:hover .subtitulo {
+          position: absolute;
+          display: inline;
+          color: #dddddd;
+          font-size: 2.5rem;
+          font-weight: 600;
+          text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8); }
+          #principal #categorias #generos .borde_9:hover .subtitulo span {
+            position: absolute;
+            right: 5rem;
+            bottom: 3rem; }
+      #principal #categorias #generos .borde_10 {
+        border: 0.25rem solid transparent; }
+        #principal #categorias #generos .borde_10 .thriller {
+          background-image: url(../media/genres/thriller.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: brightness(70%) saturate(40%);
+          width: 100%;
+          height: 100%; }
+          #principal #categorias #generos .borde_10 .thriller .subtitulo {
+            width: 100%;
+            height: 100%;
+            display: none; }
+      #principal #categorias #generos .borde_10:hover {
+        height: 100%;
+        width: 40rem; }
+        #principal #categorias #generos .borde_10:hover .thriller {
+          filter: brightness(100%) saturate(100%); }
+        #principal #categorias #generos .borde_10:hover .subtitulo {
+          position: absolute;
+          display: inline;
+          color: #dddddd;
+          font-size: 2.5rem;
+          font-weight: 600;
+          text-shadow: 3px 3px 3px rgba(14, 14, 14, 0.8); }
+          #principal #categorias #generos .borde_10:hover .subtitulo span {
+            position: absolute;
+            right: 5rem;
+            bottom: 3rem; }
+      #principal #categorias #generos .accion {
+        background-position: 80% 0%; }
+      #principal #categorias #generos .animadas {
+        background-position: 65% 0%; }
+      #principal #categorias #generos .belico {
+        background-position: 55% 0%; }
+      #principal #categorias #generos .ciencia_ficcion {
+        background-position: 75% 0%; }
+      #principal #categorias #generos .comedia {
+        background-position: 30% 0%; }
+      #principal #categorias #generos .crimen {
+        background-position: 15% 0%; }
+      #principal #categorias #generos .drama {
+        background-position: 30% 0%; }
+      #principal #categorias #generos .fantasia {
+        background-position: 55% 0%; }
+      #principal #categorias #generos .terror {
+        background-position: 70% 0%; }
+      #principal #categorias #generos .thriller {
+        background-position: 40% 0%; }
+    #principal #categorias .gen {
+      font-size: 3rem;
+      font-weight: 100;
+      color: #ffffff;
+      font-style: italic;
+      text-shadow: 0 0 1rem #ff684e, 0 0 0.2rem #ff684e;
+      line-height: 1.1;
+      position: absolute;
+      padding-left: 4rem;
+      margin-top: 3rem;
+      z-index: 3; }
+  #principal #lista {
+    grid-area: lista;
+    background-color: #1f1f1f;
+    background-image: url(../media/backgrounds/background_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.5s ease-in-out; }
+    #principal #lista .posters {
+      width: 92%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 9.2rem);
+      grid-template-rows: auto;
+      grid-gap: 0.5rem;
+      filter: grayscale(20%) brightness(90%);
+      padding-top: 8rem; }
+      #principal #lista .posters #c1 {
+        background-image: url(../media/posters/1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c1 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c1 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c1 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c1 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c1 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c1 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c1::before {
+        content: "#1";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c1:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c2 {
+        background-image: url(../media/posters/2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c2 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c2 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c2 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c2 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c2 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c2 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c2::before {
+        content: "#2";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c2:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c3 {
+        background-image: url(../media/posters/3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c3 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c3 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c3 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c3 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c3 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c3 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c3::before {
+        content: "#3";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c3:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c4 {
+        background-image: url(../media/posters/4.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c4 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c4 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c4 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c4 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c4 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c4 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c4::before {
+        content: "#4";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c4:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c5 {
+        background-image: url(../media/posters/5.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c5 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c5 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c5 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c5 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c5 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c5 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c5::before {
+        content: "#5";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c5:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c6 {
+        background-image: url(../media/posters/6.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c6 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c6 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c6 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c6 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c6 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c6 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c6::before {
+        content: "#6";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c6:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c7 {
+        background-image: url(../media/posters/7.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c7 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c7 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c7 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c7 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c7 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c7 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c7::before {
+        content: "#7";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c7:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c8 {
+        background-image: url(../media/posters/8.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c8 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c8 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c8 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c8 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c8 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c8 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c8::before {
+        content: "#8";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c8:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c9 {
+        background-image: url(../media/posters/9.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c9 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c9 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c9 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c9 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c9 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c9 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c9::before {
+        content: "#9";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c9:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c10 {
+        background-image: url(../media/posters/10.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c10 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c10 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c10 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c10 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c10 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c10 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c10::before {
+        content: "#10";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c10:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c11 {
+        background-image: url(../media/posters/11.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c11 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c11 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c11 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c11 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c11 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c11 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c11::before {
+        content: "#11";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c11:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c12 {
+        background-image: url(../media/posters/12.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c12 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c12 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c12 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c12 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c12 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c12 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c12::before {
+        content: "#12";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c12:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c13 {
+        background-image: url(../media/posters/13.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c13 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c13 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c13 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c13 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c13 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c13 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c13::before {
+        content: "#13";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c13:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c14 {
+        background-image: url(../media/posters/14.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c14 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c14 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c14 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c14 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c14 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c14 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c14::before {
+        content: "#14";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c14:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c15 {
+        background-image: url(../media/posters/15.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c15 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c15 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c15 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c15 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c15 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c15 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c15::before {
+        content: "#15";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c15:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c16 {
+        background-image: url(../media/posters/16.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c16 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c16 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c16 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c16 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c16 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c16 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c16::before {
+        content: "#16";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c16:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c17 {
+        background-image: url(../media/posters/17.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c17 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c17 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c17 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c17 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c17 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c17 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c17::before {
+        content: "#17";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c17:hover::before {
+        opacity: 1; }
+      #principal #lista .posters #c18 {
+        background-image: url(../media/posters/18.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 13.8rem;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px black;
+        position: relative; }
+        #principal #lista .posters #c18 .resaltado {
+          position: relative;
+          color: #dddddd;
+          width: 100%;
+          height: 100%; }
+          #principal #lista .posters #c18 .resaltado p {
+            position: relative;
+            z-index: -1; }
+        #principal #lista .posters #c18 .resaltado::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          top: 0;
+          right: 0;
+          width: 9.2rem;
+          opacity: 0;
+          transition: all 0.5s ease;
+          background-color: rgba(24, 24, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 5px; }
+        #principal #lista .posters #c18 .resaltado:hover p {
+          z-index: 2;
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          transition-delay: 0.3s; }
+          #principal #lista .posters #c18 .resaltado:hover p strong {
+            font-size: 1rem; }
+        #principal #lista .posters #c18 .resaltado:hover::after {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 1; }
+      #principal #lista .posters #c18::before {
+        content: "#18";
+        color: #ff684e;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-weight: 600;
+        z-index: 3;
+        transition: 1s;
+        opacity: 0; }
+      #principal #lista .posters #c18:hover::before {
+        opacity: 1; }
+    #principal #lista .orden {
+      align-items: center; }
+      #principal #lista .orden .filtros {
+        display: flex; }
+        #principal #lista .orden .filtros a {
+          position: relative;
+          color: #ff684e;
+          font-size: 1.2rem;
+          font-weight: 600;
+          z-index: 2;
+          margin-top: 4.2rem;
+          margin-left: 4rem; }
+        #principal #lista .orden .filtros a:hover {
+          color: #dddddd; }
+      #principal #lista .orden .verMas {
+        display: flex; }
+        #principal #lista .orden .verMas a {
+          position: relative;
+          color: #ff684e;
+          font-size: 2rem;
+          margin-top: 4rem;
+          margin-left: 38rem;
+          z-index: 3;
+          transition: 0.5s all ease-in; }
+        #principal #lista .orden .verMas a:hover {
+          transform: rotate(90deg); }
+  #principal #baseFiltro {
+    position: absolute;
+    background-color: #ff684e;
+    width: 17.5rem;
+    height: 100%;
+    top: 0rem;
+    left: 0rem;
+    transform: translateX(-17.5rem); }
+    #principal #baseFiltro ul {
+      height: 100vh;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center; }
+  #principal .showMenu {
+    transform: translateX(17.5rem); }
+  #principal #aportes {
+    grid-area: aportes;
+    background-image: url(../media/backgrounds/background_15.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; }
+    #principal #aportes .sombra {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "sugerencias donaciones"; }
+      #principal #aportes .sombra .aporte {
+        grid-area: sugerencias;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        margin: auto;
+        margin-left: 6rem;
+        margin-right: 1rem;
+        border-left: 1px solid white;
+        width: 30rem;
+        height: 30rem;
+        padding-left: 2rem; }
+        #principal #aportes .sombra .aporte h3 {
+          font-size: 3rem;
+          font-weight: 100;
+          color: #ffffff;
+          font-style: italic;
+          text-shadow: 0 0 1rem #ff684e, 0 0 0.2rem #ff684e;
+          line-height: 1.1; }
+        #principal #aportes .sombra .aporte p {
+          margin-top: 4rem;
+          margin-bottom: 4rem;
+          font-size: 1.2rem;
+          font-weight: 200;
+          color: #ffffff;
+          line-height: 1.5; }
+        #principal #aportes .sombra .aporte .botones {
+          font-size: 1.2rem;
+          font-style: italic;
+          background-color: #dddddd;
+          height: auto;
+          padding: 0.5rem 1rem;
+          border-radius: 1.5rem;
+          width: 60%;
+          margin: initial; }
+          #principal #aportes .sombra .aporte .botones a {
+            color: #000000; }
+        #principal #aportes .sombra .aporte .botones:hover {
+          background-color: #ff684e; }
+      #principal #aportes .sombra .box {
+        grid-area: donaciones;
+        margin: auto;
+        border: 1px solid #ffffff;
+        width: 30rem;
+        height: 30rem;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        overflow: hidden;
+        position: relative; }
+        #principal #aportes .sombra .box .oracion {
+          margin: 2rem 2rem 1.5rem 2rem;
+          font-size: 1.2rem;
+          font-weight: 200;
+          color: #ffffff;
+          line-height: 1.5; }
+        #principal #aportes .sombra .box .redes {
+          width: 85%;
+          z-index: 2;
+          display: flex;
+          flex-flow: row wrap;
+          margin-top: 1rem;
+          margin-bottom: 1rem; }
+          #principal #aportes .sombra .box .redes .red {
+            margin: 0.6rem;
+            margin-top: 2.5rem;
+            position: relative; }
+            #principal #aportes .sombra .box .redes .red .moneda {
+              width: 5rem;
+              height: auto;
+              filter: saturate(20%);
+              cursor: pointer;
+              transition: all 0.5s; }
+            #principal #aportes .sombra .box .redes .red .moneda:hover {
+              filter: saturate(100%); }
+  #principal .direccion {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    height: 30rem;
+    width: 30rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    transform: translateY(-31rem);
+    border-bottom: 5px solid #dddddd;
+    z-index: 10; }
+    #principal .direccion p {
+      color: #dddddd;
+      font-size: 1rem;
+      margin-top: 3.5rem; }
+    #principal .direccion img {
+      width: 12rem; }
+    #principal .direccion span {
+      font-size: 2.2rem;
+      color: #ffffff;
+      padding-bottom: 3rem; }
+  #principal .abierto {
+    transform: translateY(0%); }
+  #principal #btc::before {
+    position: absolute;
+    content: "Bitcoin";
+    background-color: #dddddd;
+    border-radius: 1rem;
+    padding: 0.2rem 0.75rem;
+    width: max-content;
+    height: 1.5rem;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) scale(0%);
+    color: #222222;
+    transition: 0.5s; }
+  #principal #btc:hover::before {
+    transform: translateX(-50%) translateY(-100%) scale(100%); }
+  #principal #eth::before {
+    position: absolute;
+    content: "Ethereum";
+    background-color: #dddddd;
+    border-radius: 1rem;
+    padding: 0.2rem 0.75rem;
+    width: max-content;
+    height: 1.5rem;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) scale(0%);
+    color: #222222;
+    transition: 0.5s; }
+  #principal #eth:hover::before {
+    transform: translateX(-50%) translateY(-100%) scale(100%); }
+  #principal #bsc::before {
+    position: absolute;
+    content: "Binance Smart Chain";
+    background-color: #dddddd;
+    border-radius: 1rem;
+    padding: 0.2rem 0.75rem;
+    width: max-content;
+    height: 1.5rem;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) scale(0%);
+    color: #222222;
+    transition: 0.5s; }
+  #principal #bsc:hover::before {
+    transform: translateX(-50%) translateY(-100%) scale(100%); }
+  #principal #ltc::before {
+    position: absolute;
+    content: "Litecoin";
+    background-color: #dddddd;
+    border-radius: 1rem;
+    padding: 0.2rem 0.75rem;
+    width: max-content;
+    height: 1.5rem;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) scale(0%);
+    color: #222222;
+    transition: 0.5s; }
+  #principal #ltc:hover::before {
+    transform: translateX(-50%) translateY(-100%) scale(100%); }
+  #principal #matic::before {
+    position: absolute;
+    content: "Polygon";
+    background-color: #dddddd;
+    border-radius: 1rem;
+    padding: 0.2rem 0.75rem;
+    width: max-content;
+    height: 1.5rem;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) scale(0%);
+    color: #222222;
+    transition: 0.5s; }
+  #principal #matic:hover::before {
+    transform: translateX(-50%) translateY(-100%) scale(100%); }
+  #principal #terra::before {
+    position: absolute;
+    content: "Terra";
+    background-color: #dddddd;
+    border-radius: 1rem;
+    padding: 0.2rem 0.75rem;
+    width: max-content;
+    height: 1.5rem;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) scale(0%);
+    color: #222222;
+    transition: 0.5s; }
+  #principal #terra:hover::before {
+    transform: translateX(-50%) translateY(-100%) scale(100%); }
+  #principal #avax::before {
+    position: absolute;
+    content: "Avalanche";
+    background-color: #dddddd;
+    border-radius: 1rem;
+    padding: 0.2rem 0.75rem;
+    width: max-content;
+    height: 1.5rem;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) scale(0%);
+    color: #222222;
+    transition: 0.5s; }
+  #principal #avax:hover::before {
+    transform: translateX(-50%) translateY(-100%) scale(100%); }
+  #principal #rune::before {
+    position: absolute;
+    content: "THORChain";
+    background-color: #dddddd;
+    border-radius: 1rem;
+    padding: 0.2rem 0.75rem;
+    width: max-content;
+    height: 1.5rem;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) scale(0%);
+    color: #222222;
+    transition: 0.5s; }
+  #principal #rune:hover::before {
+    transform: translateX(-50%) translateY(-100%) scale(100%); }
+  #principal #footer {
+    grid-area: footer;
+    background-color: #ff684e; }
+    #principal #footer .sombra {
+      display: flex;
+      flex-flow: column nowrap; }
+      #principal #footer .sombra p {
+        color: #ffffff;
+        font-weight: 100;
+        text-align: center;
+        margin-bottom: 2rem; }
+      #principal #footer .sombra form {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 60%;
+        margin: auto; }
+        #principal #footer .sombra form textarea,
+        #principal #footer .sombra form input {
+          background-color: transparent;
+          border: 3px solid #ffffff;
+          color: #ffffff;
+          padding: 1rem;
+          margin: 0.5rem;
+          font-size: 1.2rem;
+          outline: none; }
+        #principal #footer .sombra form textarea::placeholder,
+        #principal #footer .sombra form input::placeholder {
+          color: rgba(136, 136, 136, 0.849);
+          font-size: 1.2rem; }
+        #principal #footer .sombra form input:focus,
+        #principal #footer .sombra form textarea:focus {
+          background-color: rgba(255, 255, 255, 0.089); }

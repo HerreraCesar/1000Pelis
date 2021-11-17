@@ -46,9 +46,9 @@ movies.push (new pelicula ("18","The Avengers","Joss Whedon",2012,"Fantástico",
 
 // PELICULA AL AZAR
 $('#suerte').click(function() {
-    let luck = random();
+    let luck = random(movies.length);
     // Compruebo el idioma de la página para referenciar la imágen
-    if (check.checked == false) {
+    if ($('.check').prop('checked') == false) {
         $('#poster').attr('src',`media/posters/${luck}.jpg`);
     }
     else {
@@ -63,12 +63,11 @@ $('#suerte').click(function() {
     $('#rottentomatoes').html(movies[luck-1].rottentomatoes);
 });
 
-function random() {
-    const min = 1;
-    const max = movies.length;
-    return Math.floor(Math.random()*(1+max-min)+min);
-}
 
+// FUNCION ALEATORIEDAD
+function random(max) {
+    return Math.floor((Math.random()*max)+1);
+}
 
 // SCROLLSPY
 let section = document.querySelectorAll('main div section');
@@ -101,13 +100,6 @@ $('.check').click( function() {
 
 
 // OFF-CANVAS
-/* const btn = document.querySelector('#menuFiltro');
-const main = document.querySelector('#lista');
-btn.addEventListener('click',abrirMenu);
-function abrirMenu() {
-    main.classList.toggle('showMenu');
-} */
-
 $('#menuFiltro').click(function() {
     $('#lista').toggleClass('showMenu');
 })
@@ -139,24 +131,21 @@ redes.forEach((red, indice) => {
 });
 
 // TRAILER ALEATORIO
-let corto = document.querySelector('#trailer');
-corto.innerHTML = `<video src="media/trailers/${random2()}.mp4" autoplay muted loop></video>`;
-function random2() {
-    const min = 1;
-    const max = 4;
-    return Math.floor(Math.random()*(1+max-min)+min);
-}
+$('#trailer').html(`<video src="media/trailers/${random(4)}.mp4" autoplay muted loop></video>`);
 
 
 // AUTOPLAY
 let video = document.querySelector('video');
 let isPaused = false;
-let observer = new IntersectionObserver((entries, observer) => { 
+let observer = new IntersectionObserver((entries) => { 
     entries.forEach(entry => {
-        if(entry.intersectionRatio!=0.3  && !video.paused){
-        video.pause(); isPaused = true;
+        if(entry.intersectionRatio!=0.15  && !video.paused){
+            video.pause(); isPaused = true;
         }
-        else if(isPaused) {video.play(); isPaused=false}
+        else if(isPaused) {
+            video.play(); isPaused=false
+        }
     });
-}, {threshold: 0.3});
+}, {threshold: 0.15}
+);
 observer.observe(video);

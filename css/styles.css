@@ -63,12 +63,12 @@ body {
       background-image: url(../media/backgrounds/background_17.jpg);
       background-size: cover;
       background-repeat: no-repeat;
-      transition: all 1s ease-in-out;
+      transition: background-position 1s ease-in-out;
       background-position: -250px 0%;
       background-clip: text;
       -webkit-background-clip: text; }
     #navbar #logo a:hover {
-      transition: all 1s ease-in-out;
+      /* transition: all 1s ease-in-out; */
       background-position: 0% 0%; }
   #navbar #enlaces {
     grid-area: enlaces;
@@ -742,1052 +742,73 @@ body {
     opacity: 1; } }
   #principal #lista {
     grid-area: lista;
-    background-color: #1f1f1f;
-    background-image: url(../media/backgrounds/background_2.jpg);
+    background-image: url(../media/backgrounds/background_3.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-    transition: all 0.5s ease-in-out; }
-    #principal #lista .posters {
-      width: 92%;
-      margin: auto;
+    background-size: cover; }
+    #principal #lista .sombra {
       display: grid;
-      grid-template-columns: repeat(auto-fill, 9.2rem);
-      grid-template-rows: auto;
-      grid-gap: 0.5rem;
-      filter: grayscale(20%) brightness(90%);
-      padding-top: 8rem; }
-      #principal #lista .posters #c1 {
-        background-image: url(../media/posters/1.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c1 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c1 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c1 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c1 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c1 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c1 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c1::before {
-        content: "#1";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c1:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c2 {
-        background-image: url(../media/posters/2.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c2 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c2 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c2 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c2 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c2 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c2 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c2::before {
-        content: "#2";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c2:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c3 {
-        background-image: url(../media/posters/3.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c3 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c3 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c3 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c3 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c3 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c3 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c3::before {
-        content: "#3";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c3:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c4 {
-        background-image: url(../media/posters/4.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c4 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c4 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c4 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c4 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c4 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c4 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c4::before {
-        content: "#4";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c4:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c5 {
-        background-image: url(../media/posters/5.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c5 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c5 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c5 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c5 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c5 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c5 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c5::before {
-        content: "#5";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c5:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c6 {
-        background-image: url(../media/posters/6.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c6 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c6 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c6 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c6 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c6 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c6 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c6::before {
-        content: "#6";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c6:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c7 {
-        background-image: url(../media/posters/7.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c7 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c7 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c7 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c7 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c7 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c7 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c7::before {
-        content: "#7";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c7:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c8 {
-        background-image: url(../media/posters/8.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c8 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c8 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c8 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c8 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c8 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c8 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c8::before {
-        content: "#8";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c8:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c9 {
-        background-image: url(../media/posters/9.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c9 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c9 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c9 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c9 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c9 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c9 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c9::before {
-        content: "#9";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c9:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c10 {
-        background-image: url(../media/posters/10.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c10 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c10 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c10 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c10 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c10 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c10 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c10::before {
-        content: "#10";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c10:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c11 {
-        background-image: url(../media/posters/11.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c11 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c11 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c11 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c11 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c11 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c11 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c11::before {
-        content: "#11";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c11:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c12 {
-        background-image: url(../media/posters/12.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c12 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c12 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c12 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c12 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c12 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c12 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c12::before {
-        content: "#12";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c12:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c13 {
-        background-image: url(../media/posters/13.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c13 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c13 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c13 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c13 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c13 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c13 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c13::before {
-        content: "#13";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c13:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c14 {
-        background-image: url(../media/posters/14.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c14 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c14 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c14 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c14 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c14 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c14 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c14::before {
-        content: "#14";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c14:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c15 {
-        background-image: url(../media/posters/15.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c15 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c15 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c15 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c15 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c15 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c15 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c15::before {
-        content: "#15";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c15:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c16 {
-        background-image: url(../media/posters/16.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c16 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c16 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c16 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c16 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c16 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c16 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c16::before {
-        content: "#16";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c16:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c17 {
-        background-image: url(../media/posters/17.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c17 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c17 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c17 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c17 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c17 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c17 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c17::before {
-        content: "#17";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c17:hover::before {
-        opacity: 1; }
-      #principal #lista .posters #c18 {
-        background-image: url(../media/posters/18.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 13.8rem;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px black;
-        position: relative; }
-        #principal #lista .posters #c18 .resaltado {
-          position: relative;
-          color: #dddddd;
-          width: 100%;
-          height: 100%; }
-          #principal #lista .posters #c18 .resaltado p {
-            position: relative;
-            z-index: -1; }
-        #principal #lista .posters #c18 .resaltado::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          top: 0;
-          right: 0;
-          width: 9.2rem;
-          opacity: 0;
-          transition: all 0.5s ease;
-          background-color: rgba(24, 24, 24, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 5px; }
-        #principal #lista .posters #c18 .resaltado:hover p {
-          z-index: 2;
-          font-size: 0.8rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-          padding-right: 1rem;
-          transition-delay: 0.3s; }
-          #principal #lista .posters #c18 .resaltado:hover p strong {
-            font-size: 1rem; }
-        #principal #lista .posters #c18 .resaltado:hover::after {
-          top: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 1; }
-      #principal #lista .posters #c18::before {
-        content: "#18";
-        color: #ff684e;
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0.5rem;
-        font-weight: 600;
-        z-index: 3;
-        transition: 1s;
-        opacity: 0; }
-      #principal #lista .posters #c18:hover::before {
-        opacity: 1; }
-    #principal #lista .orden {
-      align-items: center; }
-      #principal #lista .orden .filtros {
-        display: flex; }
-        #principal #lista .orden .filtros a {
-          position: relative;
-          color: #ff684e;
-          font-size: 1.2rem;
-          font-weight: 600;
-          z-index: 2;
-          margin-top: 4.2rem;
-          margin-left: 4rem; }
-        #principal #lista .orden .filtros a:hover {
-          color: #dddddd; }
-      #principal #lista .orden .verMas {
-        display: flex; }
-        #principal #lista .orden .verMas a {
-          position: relative;
-          color: #ff684e;
-          font-size: 2rem;
+      grid-template-columns: 1.35fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "imagen promocion"; }
+      #principal #lista .sombra .imagen {
+        grid-area: imagen;
+        margin: auto;
+        perspective: 1000px; }
+        #principal #lista .sombra .imagen img {
+          width: auto;
+          height: 25rem;
+          margin-top: 2rem;
+          /* margin-right: -4rem; */
+          transform: rotateY(25deg);
+          transition: 1s ease-in-out;
+          filter: saturate(50%) brightness(90%); }
+        #principal #lista .sombra .imagen img:hover {
+          transform: rotateY(0deg) scale(110%) translateX(1.5rem);
+          filter: saturate(100%) brightness(110%); }
+      #principal #lista .sombra .promocion {
+        grid-area: promocion;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-end;
+        justify-content: center;
+        margin: auto;
+        margin-right: 6rem;
+        margin-left: 1rem;
+        border-right: 1px solid white;
+        height: 30rem;
+        padding-right: 2rem;
+        z-index: 2; }
+        #principal #lista .sombra .promocion h3 {
+          font-size: 3rem;
+          font-weight: 100;
+          color: #ffffff;
+          font-style: italic;
+          text-shadow: 0 0 1rem #ff684e, 0 0 0.2rem #ff684e;
+          line-height: 1.1;
+          text-align: right; }
+        #principal #lista .sombra .promocion p {
           margin-top: 4rem;
-          margin-left: 38rem;
-          z-index: 3;
-          transition: 0.5s all ease-in; }
-        #principal #lista .orden .verMas a:hover {
-          transform: rotate(90deg); }
-  #principal #baseFiltro {
-    position: absolute;
-    background-color: #ff684e;
-    width: 17.5rem;
-    height: 100%;
-    top: 0rem;
-    left: 0rem;
-    transform: translateX(-17.5rem); }
-    #principal #baseFiltro ul {
-      height: 100vh;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-items: center; }
-  #principal .showMenu {
-    transform: translateX(17.5rem); }
+          margin-bottom: 4rem;
+          font-size: 1.2rem;
+          font-weight: 200;
+          color: #ffffff;
+          line-height: 1.5;
+          text-align: right;
+          width: 90%; }
+        #principal #lista .sombra .promocion .botones {
+          font-size: 1.2rem;
+          font-style: italic;
+          background-color: #dddddd;
+          height: auto;
+          padding: 0.5rem 1rem;
+          border-radius: 1.5rem;
+          width: 45%;
+          margin: initial; }
+          #principal #lista .sombra .promocion .botones a {
+            color: #222222; }
+        #principal #lista .sombra .promocion .botones:hover {
+          background-color: #ff684e;
+          color: #000000; }
   #principal #aportes {
     grid-area: aportes;
     background-image: url(../media/backgrounds/background_15.jpg);
@@ -2024,33 +1045,82 @@ body {
     transform: translateX(-50%) translateY(-100%) scale(100%); }
   #principal #footer {
     grid-area: footer;
-    background-color: #ff684e; }
+    background-image: url(../media/backgrounds/background_14.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: $focus; */ }
     #principal #footer .sombra {
-      display: flex;
-      flex-flow: column nowrap; }
-      #principal #footer .sombra p {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      grid-template-rows: 1fr 0.1fr;
+      grid-template-areas: "titular formulario" "copyright copyright"; }
+      #principal #footer .sombra .titular {
+        grid-area: titular;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        margin: auto;
+        margin-left: 6rem;
+        margin-right: 1rem;
+        margin-bottom: 5rem;
+        border-left: 1px solid white;
+        width: 30rem;
+        height: 27.5rem;
+        padding-left: 2rem; }
+        #principal #footer .sombra .titular h3 {
+          font-size: 3rem;
+          font-weight: 100;
+          color: #ffffff;
+          font-style: italic;
+          text-shadow: 0 0 1rem #ff684e, 0 0 0.2rem #ff684e;
+          line-height: 1.1; }
+        #principal #footer .sombra .titular p {
+          width: 82%;
+          margin-top: 4rem;
+          margin-bottom: 4rem;
+          font-size: 1.2rem;
+          font-weight: 200;
+          color: #ffffff;
+          line-height: 1.5; }
+          #principal #footer .sombra .titular p a {
+            color: #ff684e; }
+      #principal #footer .sombra .copyright {
+        grid-area: copyright;
         color: #ffffff;
         font-weight: 100;
         text-align: center;
-        margin-bottom: 2rem; }
+        /* margin: auto; */ }
       #principal #footer .sombra form {
+        grid-area: formulario;
         display: flex;
         flex-flow: column nowrap;
-        width: 60%;
-        margin: auto; }
+        width: 80%;
+        margin: auto;
+        margin-bottom: 5rem; }
         #principal #footer .sombra form textarea,
         #principal #footer .sombra form input {
           background-color: transparent;
-          border: 3px solid #ffffff;
+          border: 1px solid #ffffff;
           color: #ffffff;
           padding: 1rem;
           margin: 0.5rem;
-          font-size: 1.2rem;
+          font-size: 1rem;
           outline: none; }
+        #principal #footer .sombra form textarea {
+          height: 14rem; }
         #principal #footer .sombra form textarea::placeholder,
         #principal #footer .sombra form input::placeholder {
-          color: rgba(136, 136, 136, 0.849);
-          font-size: 1.2rem; }
+          color: #9b9b9b;
+          font-size: 1rem; }
         #principal #footer .sombra form input:focus,
         #principal #footer .sombra form textarea:focus {
-          background-color: rgba(255, 255, 255, 0.089); }
+          background-color: white;
+          color: #000; }
+        #principal #footer .sombra form button {
+          width: 97.5%;
+          font-size: 1rem;
+          height: auto;
+          padding: 1rem;
+          border-radius: 0rem;
+          margin: auto;
+          margin-top: 0.5rem; }

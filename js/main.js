@@ -177,7 +177,7 @@ redes.forEach((red, indice) => {
 });
 
 // TRAILER ALEATORIO
-$('#trailer').html(`<video src="media/trailers/${random(4)}.mp4" autoplay muted loop></video>`);
+$('#trailer').html(`<video src="media/trailers/${random(10)}.mp4" autoplay muted loop></video>`);
 
 
 // AUTOPLAY

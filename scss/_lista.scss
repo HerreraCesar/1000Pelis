@@ -2,139 +2,82 @@
 
 #lista {
     grid-area: lista;
-    background-color: #1f1f1f;
-    background-image: url(../media/backgrounds/background_2.jpg);
+    background-image: url(../media/backgrounds/background_3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    transition: all 0.5s ease-in-out;
-    .posters {
-        width: 92%;
-        margin: auto;
+    .sombra {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 9.2rem);
-        grid-template-rows: auto;
-        grid-gap: 0.5rem;
-        filter: grayscale(20%) brightness(90%);
-        padding-top: 8rem;
-        @each $id in "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18" {
-            #c#{$id} {
-                background-image: url(../media/posters/#{$id}.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                height: 13.8rem;
-                border-radius: 6px;
-                box-shadow: 0px 0px 10px rgb(0, 0, 0);
-                position: relative;
-                .resaltado {
-                    position: relative;
-                    color: $light2;
-                    width: 100%;
-                    height: 100%;
-                    p {
-                        position: relative;
-                        z-index: -1;
-                    }
-                }
-                .resaltado::after {
-                    content: "";
-                    position: absolute;
-                    bottom: 100%;
-                    top: 0;
-                    right: 0;
-                    width: 9.2rem;
-                    opacity: 0;
-                    transition: all 0.5s ease;
-                    background-color: rgba(24, 24, 24, 0.7);
-                    backdrop-filter: blur($blur);
-                    border-radius: 5px;
-                }
-                .resaltado:hover {
-                    p {
-                        z-index: 2;
-                        font-size: 0.8rem;
-                        padding-left: 1rem;
-                        padding-top: 0.5rem;
-                        padding-right: 1rem;
-                        transition-delay: 0.3s;
-                        strong {
-                            font-size: 1rem;
-                        }
-                    }
-                }
-                .resaltado:hover::after {
-                    top: 0;
-                    bottom: 0;
-                    opacity: 1;
-                    z-index: 1;
-                }
+        grid-template-columns: 1.35fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "imagen promocion";
+        .imagen {
+            grid-area: imagen;
+            margin: auto;
+            perspective: 1000px;
+            img {
+                width: auto;
+                height: 25rem;
+                margin-top: 2rem;
+                /* margin-right: -4rem; */
+                transform: rotateY(25deg);
+                transition: 1s ease-in-out;
+                filter: saturate(50%) brightness(90%);
             }
-            #c#{$id}::before {
-                content: "##{$id}";
-                color: $focus;
-                font-size: 1.5rem;
-                position: absolute;
-                right: 1rem;
-                bottom: 0.5rem;
-                font-weight: 600;
-                z-index: 3;
-                transition: 1s;
-                opacity: 0;
+            img:hover {
+                transform: rotateY(0deg) scale(110%) translateX(1.5rem);
+                filter: saturate(100%) brightness(110%);
             }
-            #c#{$id}:hover::before {
-                opacity: 1;
-            }
+            
         }
-    }
-    .orden {
-        align-items: center;
-        .filtros {
+        .promocion {
+            grid-area: promocion;
             display: flex;
-            a {
-                position: relative;
-                color: $focus;
-                font-size: 1.2rem;
-                font-weight: 600;
-                z-index: 2;
-                margin-top: 4.2rem;
-                margin-left: 4rem;
+            flex-flow: column nowrap;
+            align-items: flex-end;
+            justify-content: center;
+            margin: auto;
+            margin-right: 6rem;
+            margin-left: 1rem;
+            border-right: 1px solid white;
+            height: 30rem;
+            padding-right: 2rem;
+            z-index: 2;
+            h3 {
+                font-size: 3rem;
+                font-weight: 100;
+                color: $light;
+                font-style: italic;
+                text-shadow: 0 0 1rem $focus, 0 0 0.2rem $focus;
+                line-height: 1.1;
+                text-align: right;
             }
-            a:hover {
-                color: $light2;
-            }
-        }
-        .verMas {
-            display: flex;
-            a {
-                position: relative;
-                color: $focus;
-                font-size: 2rem;
+            p {
                 margin-top: 4rem;
-                margin-left: 38rem;
-                z-index: 3;
-                transition: 0.5s all ease-in;
+                margin-bottom: 4rem;
+                font-size: 1.2rem;
+                font-weight: 200;
+                color: $light;
+                line-height: 1.5;
+                text-align: right;
+                width: 90%;
             }
-            a:hover {
-                transform: rotate(90deg);
+            .botones {
+                font-size: 1.2rem;
+                font-style: italic;
+                background-color: $light2;
+                height: auto;
+                padding: 0.5rem 1rem;
+                border-radius: 1.5rem;
+                width: 45%;
+                margin: initial;
+                a {
+                    color: $dark2;
+                }
+            }
+            .botones:hover {
+                background-color: $focus;
+                color: $dark;
             }
         }
     }
-}
-#baseFiltro {
-    position: absolute;
-    background-color: $focus;
-    width: 17.5rem;
-    height: 100%;
-    top: 0rem;
-    left: 0rem;
-    transform: translateX(-17.5rem);
-    ul {
-        height: 100vh;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-    }
-} 
-.showMenu {
-    transform: translateX(17.5rem);
 }

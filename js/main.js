@@ -54,14 +54,60 @@ $('#suerte').click(function() {
     else {
         $('#poster').attr('src',`../../media/posters/${luck}.jpg`);
     }
-    $('#id').html(`#${luck}`);
-    $('#nombre').html(movies[luck-1].titulo);
-    $('#director').html(movies[luck-1].director);
-    $('#año').html(movies[luck-1].año);
-    $('#imdb').html(movies[luck-1].imdb);
-    $('#filmaffinity').html(movies[luck-1].filmaffinity);
-    $('#rottentomatoes').html(movies[luck-1].rottentomatoes);
+    $('#id').hide().html(`#${luck}`).fadeIn("slow");
+    $('#nombre').hide().html(movies[luck-1].titulo).slideDown("slow");
+    $('#director').hide().html(movies[luck-1].director).fadeIn("slow");
+    $('#año').hide().html(movies[luck-1].año).fadeIn("slow");
+    $('#imdb').hide().html(movies[luck-1].imdb).fadeIn("slow");
+    $('#filmaffinity').hide().html(movies[luck-1].filmaffinity).fadeIn("slow");
+    $('#rottentomatoes').hide().html(movies[luck-1].rottentomatoes).fadeIn("slow");
 });
+
+
+
+
+
+// PELICULA SEGÚN DÍA
+let hoy = new Date();
+let diaCero = new Date("11/10/2021");
+let contador = Math.floor((hoy.getTime() - diaCero.getTime())/86400000)+1;
+
+if (contador > 1000) {
+    let ahora = Date.now();
+    diaCero = new Date(ahora);
+    contador = Math.floor((hoy.getTime() - diaCero.getTime())/86400000)+1;
+    console.log(diaCero);
+    if ($('.check').prop('checked') == false) {
+        $('#poster').attr('src',`media/posters/${contador}.jpg`);
+    }
+    else {
+        $('#poster').attr('src',`../../media/posters/${contador}.jpg`);
+    }
+    $('#id').hide().html(`#${contador}`).fadeIn("slow");
+    $('#nombre').hide().html(movies[contador-1].titulo).slideDown("slow");
+    $('#director').hide().html(movies[contador-1].director).fadeIn("slow");
+    $('#año').hide().html(movies[contador-1].año).fadeIn("slow");
+    $('#imdb').hide().html(movies[contador-1].imdb).fadeIn("slow");
+    $('#filmaffinity').hide().html(movies[contador-1].filmaffinity).fadeIn("slow");
+    $('#rottentomatoes').hide().html(movies[contador-1].rottentomatoes).fadeIn("slow");
+}
+else {
+    // Compruebo el idioma de la página para referenciar la imágen
+    if ($('.check').prop('checked') == false) {
+        $('#poster').attr('src',`media/posters/${contador}.jpg`);
+    }
+    else {
+        $('#poster').attr('src',`../../media/posters/${contador}.jpg`);
+    }
+    $('#id').hide().html(`#${contador}`).fadeIn("slow");
+    $('#nombre').hide().html(movies[contador-1].titulo).slideDown("slow");
+    $('#director').hide().html(movies[contador-1].director).fadeIn("slow");
+    $('#año').hide().html(movies[contador-1].año).fadeIn("slow");
+    $('#imdb').hide().html(movies[contador-1].imdb).fadeIn("slow");
+    $('#filmaffinity').hide().html(movies[contador-1].filmaffinity).fadeIn("slow");
+    $('#rottentomatoes').hide().html(movies[contador-1].rottentomatoes).fadeIn("slow");
+}
+
 
 
 // FUNCION ALEATORIEDAD
@@ -149,3 +195,17 @@ let observer = new IntersectionObserver((entries) => {
 }, {threshold: 0.15}
 );
 observer.observe(video);
+
+// ANIMACIONES CATEGORIAS
+let animado = document.querySelectorAll('.animado');
+function mostrarScroll () {
+    let scrollTop = document.documentElement.scrollTop;
+    for (let i = 0; i < animado.length; i++) {
+        let alturaAnimado = animado[i].offsetTop;
+        if (alturaAnimado - 300 < scrollTop) {
+            animado[i].classList.add("animar");
+            animado[i].style.animationDelay = i/4+"s";
+        }
+    }
+}
+window.addEventListener('scroll', mostrarScroll);

@@ -88,6 +88,10 @@
             margin-right: 2rem;
             cursor: pointer;
         }
+        .check:hover::before {
+            transition: 0.5s;
+            background-color: rgba(39, 39, 39, 0.9);
+        }
         .check::before {
             content: '';
             position: absolute;

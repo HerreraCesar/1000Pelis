@@ -10,9 +10,13 @@
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         grid-template-rows: 25rem;
-        @each $letra, $genero in $generos  {
-            .borde_#{$letra} {
+        @each $numero, $genero in $generos  {
+            .borde_#{$numero} {
                 border: 0.25rem solid transparent;
+                opacity: 0;
+                /* transition: opacity 0.5s ease-in; */
+                
+                
                 .#{$genero} {
                     background-image: url(../media/genres/#{$genero}.jpg);
                     background-size: cover;
@@ -27,7 +31,7 @@
                     }
                 }
             }
-            .borde_#{$letra}:hover {
+            .borde_#{$numero}:hover {
                 height: 100%;
                 width: 40rem;
                 .#{$genero} {
@@ -65,5 +69,20 @@
         padding-left: 4rem;
         margin-top: 3rem;
         z-index: 3;
+    }
+}
+
+.animar {
+    
+    animation-name: aparecer;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    @keyframes aparecer {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 }

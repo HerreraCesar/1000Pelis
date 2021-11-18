@@ -10,7 +10,7 @@
             position: relative;
         }
         overflow: hidden;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.1);
         video {
             position: absolute;
             margin: auto;
@@ -104,7 +104,7 @@
             height: 3rem;
             width: fit-content;
             border-radius: 2rem;
-            margin: 4rem 0rem 4rem 4rem;
+            margin: 2rem 0rem 0rem 4rem;
             /* margin: auto; */
             /* margin-top: 3rem; */
             a {
@@ -123,8 +123,8 @@
     height: 100vh;
     position: absolute;
     top: 0;
-    left: 0;
-    margin: auto;
+    /* left: 0; */
+    /* margin: auto; */
     /* background: rgb(0,0,0);
     background: linear-gradient(90deg, rgb(13, 13, 14) 0%, rgba(18, 33, 49, 0.70) 50%, rgba(221,221,221,0) 100%); */
     /* background-image: linear-gradient(to left, #30d0d000 0%, #330867 100%); */
@@ -136,5 +136,6 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    /* padding-bottom: 4rem; */
     /* align-items: center; */
 }

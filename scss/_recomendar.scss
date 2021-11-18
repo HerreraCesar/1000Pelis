@@ -14,9 +14,15 @@
             grid-area: poster;
             margin: auto;
             position: relative;
+            /* overflow: hidden; */
             #poster {
                 width: auto;
                 height: 30rem;
+                transition: 0.3s ease-in-out;
+            }
+            #poster:hover {
+                transform: scale(1.025);
+                transition: 0.3s ease-in-out;
             }
         }
         .datos {

@@ -10,7 +10,8 @@
   scroll-behavior: smooth; }
 
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background-color: black; }
 
 /* PARTIALS */
 /* CLASES GENÉRICAS */
@@ -115,6 +116,9 @@ body {
       margin-left: 1rem;
       margin-right: 2rem;
       cursor: pointer; }
+    #navbar #botones .check:hover::before {
+      transition: 0.5s;
+      background-color: rgba(39, 39, 39, 0.9); }
     #navbar #botones .check::before {
       content: '';
       position: absolute;
@@ -151,7 +155,7 @@ body {
     grid-area: portada; }
     #principal #portada .sombra {
       overflow: hidden;
-      background-color: rgba(0, 0, 0, 0.3); }
+      background-color: rgba(0, 0, 0, 0.1); }
       #principal #portada .sombra #trailer {
         width: 100%;
         height: 100%;
@@ -234,7 +238,7 @@ body {
         height: 3rem;
         width: fit-content;
         border-radius: 2rem;
-        margin: 4rem 0rem 4rem 4rem;
+        margin: 2rem 0rem 0rem 4rem;
         /* margin: auto; */
         /* margin-top: 3rem; */ }
         #principal #portada .sombra button a {
@@ -248,8 +252,8 @@ body {
     height: 100vh;
     position: absolute;
     top: 0;
-    left: 0;
-    margin: auto;
+    /* left: 0; */
+    /* margin: auto; */
     /* background: rgb(0,0,0);
     background: linear-gradient(90deg, rgb(13, 13, 14) 0%, rgba(18, 33, 49, 0.70) 50%, rgba(221,221,221,0) 100%); */
     /* background-image: linear-gradient(to left, #30d0d000 0%, #330867 100%); */
@@ -261,6 +265,7 @@ body {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    /* padding-bottom: 4rem; */
     /* align-items: center; */ }
   #principal .to_top {
     grid-area: arriba;
@@ -288,10 +293,15 @@ body {
       #principal #recomendar .sombra .dia {
         grid-area: poster;
         margin: auto;
-        position: relative; }
+        position: relative;
+        /* overflow: hidden; */ }
         #principal #recomendar .sombra .dia #poster {
           width: auto;
-          height: 30rem; }
+          height: 30rem;
+          transition: 0.3s ease-in-out; }
+        #principal #recomendar .sombra .dia #poster:hover {
+          transform: scale(1.025);
+          transition: 0.3s ease-in-out; }
       #principal #recomendar .sombra .datos {
         grid-area: datos;
         margin: auto;
@@ -380,7 +390,9 @@ body {
       grid-template-columns: repeat(10, 1fr);
       grid-template-rows: 25rem; }
       #principal #categorias #generos .borde_1 {
-        border: 0.25rem solid transparent; }
+        border: 0.25rem solid transparent;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-in; */ }
         #principal #categorias #generos .borde_1 .accion {
           background-image: url(../media/genres/accion.jpg);
           background-size: cover;
@@ -409,7 +421,9 @@ body {
             right: 5rem;
             bottom: 3rem; }
       #principal #categorias #generos .borde_2 {
-        border: 0.25rem solid transparent; }
+        border: 0.25rem solid transparent;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-in; */ }
         #principal #categorias #generos .borde_2 .animadas {
           background-image: url(../media/genres/animadas.jpg);
           background-size: cover;
@@ -438,7 +452,9 @@ body {
             right: 5rem;
             bottom: 3rem; }
       #principal #categorias #generos .borde_3 {
-        border: 0.25rem solid transparent; }
+        border: 0.25rem solid transparent;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-in; */ }
         #principal #categorias #generos .borde_3 .belico {
           background-image: url(../media/genres/belico.jpg);
           background-size: cover;
@@ -467,7 +483,9 @@ body {
             right: 5rem;
             bottom: 3rem; }
       #principal #categorias #generos .borde_4 {
-        border: 0.25rem solid transparent; }
+        border: 0.25rem solid transparent;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-in; */ }
         #principal #categorias #generos .borde_4 .ciencia_ficcion {
           background-image: url(../media/genres/ciencia_ficcion.jpg);
           background-size: cover;
@@ -496,7 +514,9 @@ body {
             right: 5rem;
             bottom: 3rem; }
       #principal #categorias #generos .borde_5 {
-        border: 0.25rem solid transparent; }
+        border: 0.25rem solid transparent;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-in; */ }
         #principal #categorias #generos .borde_5 .comedia {
           background-image: url(../media/genres/comedia.jpg);
           background-size: cover;
@@ -525,7 +545,9 @@ body {
             right: 5rem;
             bottom: 3rem; }
       #principal #categorias #generos .borde_6 {
-        border: 0.25rem solid transparent; }
+        border: 0.25rem solid transparent;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-in; */ }
         #principal #categorias #generos .borde_6 .crimen {
           background-image: url(../media/genres/crimen.jpg);
           background-size: cover;
@@ -554,7 +576,9 @@ body {
             right: 5rem;
             bottom: 3rem; }
       #principal #categorias #generos .borde_7 {
-        border: 0.25rem solid transparent; }
+        border: 0.25rem solid transparent;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-in; */ }
         #principal #categorias #generos .borde_7 .drama {
           background-image: url(../media/genres/drama.jpg);
           background-size: cover;
@@ -583,7 +607,9 @@ body {
             right: 5rem;
             bottom: 3rem; }
       #principal #categorias #generos .borde_8 {
-        border: 0.25rem solid transparent; }
+        border: 0.25rem solid transparent;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-in; */ }
         #principal #categorias #generos .borde_8 .fantasia {
           background-image: url(../media/genres/fantasia.jpg);
           background-size: cover;
@@ -612,7 +638,9 @@ body {
             right: 5rem;
             bottom: 3rem; }
       #principal #categorias #generos .borde_9 {
-        border: 0.25rem solid transparent; }
+        border: 0.25rem solid transparent;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-in; */ }
         #principal #categorias #generos .borde_9 .terror {
           background-image: url(../media/genres/terror.jpg);
           background-size: cover;
@@ -641,7 +669,9 @@ body {
             right: 5rem;
             bottom: 3rem; }
       #principal #categorias #generos .borde_10 {
-        border: 0.25rem solid transparent; }
+        border: 0.25rem solid transparent;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-in; */ }
         #principal #categorias #generos .borde_10 .thriller {
           background-image: url(../media/genres/thriller.jpg);
           background-size: cover;
@@ -700,6 +730,16 @@ body {
       padding-left: 4rem;
       margin-top: 3rem;
       z-index: 3; }
+  #principal .animar {
+    animation-name: aparecer;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; }
+
+@keyframes aparecer {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
   #principal #lista {
     grid-area: lista;
     background-color: #1f1f1f;
@@ -1852,12 +1892,12 @@ body {
     z-index: 10; }
     #principal .direccion p {
       color: #dddddd;
-      font-size: 1rem;
+      font-size: 0.8rem;
       margin-top: 3.5rem; }
     #principal .direccion img {
       width: 12rem; }
     #principal .direccion span {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: #ffffff;
       padding-bottom: 3rem; }
   #principal .abierto {

@@ -1,4 +1,4 @@
-// RECOMENDADOR DE PELICUAS SEGÚN GÉNERO
+// 1000 Movies
 
 // Defino object
 class pelicula {
@@ -44,34 +44,10 @@ movies.push (new pelicula ("17","Spider-Man","Sam Raimi",2002,"Fantástico",121,
 movies.push (new pelicula ("18","The Avengers","Joss Whedon",2012,"Fantástico",135,"Estados Unidos","Marvel Cinematic Universe",8.0,6.9,9.1));
 
 
-// PELICULA AL AZAR
-$('#suerte').click(function() {
-    let luck = random(movies.length);
-    // Compruebo el idioma de la página para referenciar la imágen
-    if ($('.check').prop('checked') == false) {
-        $('#poster').attr('src',`media/posters/${luck}.jpg`);
-    }
-    else {
-        $('#poster').attr('src',`../../media/posters/${luck}.jpg`);
-    }
-    $('#id').hide().html(`#${luck}`).fadeIn("slow");
-    $('#nombre').hide().html(movies[luck-1].titulo).slideDown("slow");
-    $('#director').hide().html(movies[luck-1].director).fadeIn("slow");
-    $('#año').hide().html(movies[luck-1].año).fadeIn("slow");
-    $('#imdb').hide().html(movies[luck-1].imdb).fadeIn("slow");
-    $('#filmaffinity').hide().html(movies[luck-1].filmaffinity).fadeIn("slow");
-    $('#rottentomatoes').hide().html(movies[luck-1].rottentomatoes).fadeIn("slow");
-});
-
-
-
-
-
-// PELICULA SEGÚN DÍA
+// PELICULA SEGÚN DÍA (recomendaciones)
 let hoy = new Date();
-let diaCero = new Date("11/10/2021");
+let diaCero = new Date("11/15/2021");
 let contador = Math.floor((hoy.getTime() - diaCero.getTime())/86400000)+1;
-
 if (contador > 1000) {
     let ahora = Date.now();
     diaCero = new Date(ahora);
@@ -109,13 +85,33 @@ else {
 }
 
 
+// PELICULA AL AZAR (recomendaciones)
+$('#suerte').click(function() {
+    let luck = random(movies.length);
+    // Compruebo el idioma de la página para referenciar la imágen
+    if ($('.check').prop('checked') == false) {
+        $('#poster').attr('src',`media/posters/${luck}.jpg`);
+    }
+    else {
+        $('#poster').attr('src',`../../media/posters/${luck}.jpg`);
+    }
+    $('#id').hide().html(`#${luck}`).fadeIn("slow");
+    $('#nombre').hide().html(movies[luck-1].titulo).slideDown("slow");
+    $('#director').hide().html(movies[luck-1].director).fadeIn("slow");
+    $('#año').hide().html(movies[luck-1].año).fadeIn("slow");
+    $('#imdb').hide().html(movies[luck-1].imdb).fadeIn("slow");
+    $('#filmaffinity').hide().html(movies[luck-1].filmaffinity).fadeIn("slow");
+    $('#rottentomatoes').hide().html(movies[luck-1].rottentomatoes).fadeIn("slow");
+});
+
 
 // FUNCION ALEATORIEDAD
 function random(max) {
     return Math.floor((Math.random()*max)+1);
 }
 
-// SCROLLSPY
+
+// SCROLLSPY (menú navegación)
 let section = document.querySelectorAll('main div section');
 window.onscroll = () => {
     section.forEach(i => {
@@ -131,7 +127,7 @@ window.onscroll = () => {
 }
 
 
-// MULTILANGUAGE
+// MULTILANGUAGE (switch)
 $('.check').click( function() {
     if ($('.check').prop('checked') == true) {
         location.href='pages/en/index.html';
@@ -141,30 +137,16 @@ $('.check').click( function() {
     }
 })
 
-// Guardo el idioma localmente
-/* localStorage.setItem("idioma",JSON.stringify(check)); */
 
-
-// OFF-CANVAS
-$('#menuFiltro').click(function() {
-    $('#lista').toggleClass('showMenu');
+// OFF-CANVAS (filtros)
+$('#menuFiltro').click(function(e) {
+    e.preventDefault();
+    $('#completa').toggleClass('showMenu');
+    $('#menuFiltro').toggleClass('open')
 })
 
 
-// FULL PAGE SCROLL
-/* let cuerpoPrincipal = document.querySelector('body');
-cuerpoPrincipal.addEventListener('wheel',avanzar);
-function avanzar(e) {
-    let delta = e.wheelDeltaY;
-    if (delta < 0) {
-        window.scrollBy(0, window.innerHeight);
-    }
-    else if (delta > 0) {
-        window.scrollBy(0, -window.innerHeight);
-    }
-} */
-
-// POP-UP
+// POP-UP (contribuciones)
 let redes = document.querySelectorAll('.red');
 let direcciones = document.querySelectorAll('.direccion');
 redes.forEach((red, indice) => {
@@ -176,7 +158,8 @@ redes.forEach((red, indice) => {
     })
 });
 
-// TRAILER ALEATORIO
+
+// TRAILER ALEATORIO (portada)
 if ($('.check').prop('checked') == false) {
     $('#trailer').html(`<video src="media/trailers/${random(10)}.mp4" autoplay muted loop></video>`);
 }
@@ -185,23 +168,7 @@ else {
 }
 
 
-// AUTOPLAY
-let video = document.querySelector('video');
-let isPaused = false;
-let observer = new IntersectionObserver((entries) => { 
-    entries.forEach(entry => {
-        if(entry.intersectionRatio!=0.15  && !video.paused){
-            video.pause(); isPaused = true;
-        }
-        else if(isPaused) {
-            video.play(); isPaused=false
-        }
-    });
-}, {threshold: 0.15}
-);
-observer.observe(video);
-
-// ANIMACIONES CATEGORIAS
+// ANIMACIONES CATEGORIAS (géneros)
 let animado = document.querySelectorAll('.animado');
 function mostrarScroll () {
     let scrollTop = document.documentElement.scrollTop;
@@ -214,3 +181,71 @@ function mostrarScroll () {
     }
 }
 window.addEventListener('scroll', mostrarScroll);
+
+
+// CARGA DE PELICULAS DESDE API (lista completa)
+let pagina = 1;
+let mov = [];
+const urlMovies = `https://api.themoviedb.org/3/movie/popular?api_key=f082eb9cee35c22a2b3667066e45fe29&page=${pagina}`;
+$.get (urlMovies, function cargar(respuesta, estado) {
+    if (estado === "success") {
+        console.log(respuesta);
+        respuesta.results.forEach(movie => {
+            $('.posters').append(`
+                <a class="movie" href="#" style="background-image: url(https://image.tmdb.org/t/p/w500/${movie.poster_path})">
+                    <div class="resaltado">
+                        <p><strong>${movie.title}</strong></p>
+                        <p>${movie.release_date}</p>
+                    </div>
+                </a>
+            `)
+        });
+    }
+})
+
+
+// AGREGAR MÁS PELICULAS AL HACER CLICK (botón +)
+$('.mas').click( () => {
+    pagina = pagina +1;
+    const urlMovies = `https://api.themoviedb.org/3/movie/popular?api_key=f082eb9cee35c22a2b3667066e45fe29&page=${pagina}`;
+    $.get (urlMovies, function cargar(respuesta, estado) {
+        if (estado === "success") {
+            console.log(respuesta);
+            respuesta.results.forEach(movie => {
+                $('.posters').append(`
+                    <a class="movie" href="#" style="background-image: url(https://image.tmdb.org/t/p/w500/${movie.poster_path})">
+                        <div class="resaltado">
+                            <p><strong>${movie.title}</strong></p>
+                            <p>${movie.release_date}</p>
+                        </div>
+                    </a>
+                `)
+            });
+        }
+    })
+})
+
+
+// AUTOPLAY (portada)
+if (window.location.href == "http://127.0.0.1:5500/pages/es/list.html" ) {
+}
+else {
+    let video = document.querySelector('video');
+    let isPaused = false;
+    let observer = new IntersectionObserver((entries) => { 
+        entries.forEach(entry => {
+            if(entry.intersectionRatio!=0.15  && !video.paused){
+                video.pause(); isPaused = true;
+            }
+            else if(isPaused) {
+                video.play(); isPaused=false
+            }
+        });
+    }, {threshold: 0.15}
+    );
+    observer.observe(video);
+}
+
+
+
+

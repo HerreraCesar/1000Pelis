@@ -14,9 +14,6 @@
             .borde_#{$numero} {
                 border: 0.25rem solid transparent;
                 opacity: 0;
-                /* transition: opacity 0.5s ease-in; */
-                
-                
                 .#{$genero} {
                     background-image: url(../media/genres/#{$genero}.jpg);
                     background-size: cover;

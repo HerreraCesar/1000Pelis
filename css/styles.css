@@ -68,7 +68,6 @@ body {
       background-clip: text;
       -webkit-background-clip: text; }
     #navbar #logo a:hover {
-      /* transition: all 1s ease-in-out; */
       background-position: 0% 0%; }
   #navbar #enlaces {
     grid-area: enlaces;
@@ -238,9 +237,7 @@ body {
         height: 3rem;
         width: fit-content;
         border-radius: 2rem;
-        margin: 2rem 0rem 0rem 4rem;
-        /* margin: auto; */
-        /* margin-top: 3rem; */ }
+        margin: 2rem 0rem 0rem 4rem; }
         #principal #portada .sombra button a {
           color: #222222;
           font-size: 1.2rem;
@@ -252,21 +249,10 @@ body {
     height: 100vh;
     position: absolute;
     top: 0;
-    /* left: 0; */
-    /* margin: auto; */
-    /* background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgb(13, 13, 14) 0%, rgba(18, 33, 49, 0.70) 50%, rgba(221,221,221,0) 100%); */
-    /* background-image: linear-gradient(to left, #30d0d000 0%, #330867 100%); */
     background-image: linear-gradient(to left, rgba(104, 79, 214, 0) 0%, rgba(10, 0, 48, 0.9) 100%);
-    /* background-color: rgba(255, 255, 255, 0.1); */
-    /* backdrop-filter: blur($blur); */
-    /* margin-top: 25vh; */
-    /* box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.9); */
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    /* padding-bottom: 4rem; */
-    /* align-items: center; */ }
+    justify-content: center; }
   #principal .to_top {
     grid-area: arriba;
     position: sticky;
@@ -293,8 +279,7 @@ body {
       #principal #recomendar .sombra .dia {
         grid-area: poster;
         margin: auto;
-        position: relative;
-        /* overflow: hidden; */ }
+        position: relative; }
         #principal #recomendar .sombra .dia #poster {
           width: auto;
           height: 30rem;
@@ -391,8 +376,7 @@ body {
       grid-template-rows: 25rem; }
       #principal #categorias #generos .borde_1 {
         border: 0.25rem solid transparent;
-        opacity: 0;
-        /* transition: opacity 0.5s ease-in; */ }
+        opacity: 0; }
         #principal #categorias #generos .borde_1 .accion {
           background-image: url(../media/genres/accion.jpg);
           background-size: cover;
@@ -422,8 +406,7 @@ body {
             bottom: 3rem; }
       #principal #categorias #generos .borde_2 {
         border: 0.25rem solid transparent;
-        opacity: 0;
-        /* transition: opacity 0.5s ease-in; */ }
+        opacity: 0; }
         #principal #categorias #generos .borde_2 .animadas {
           background-image: url(../media/genres/animadas.jpg);
           background-size: cover;
@@ -453,8 +436,7 @@ body {
             bottom: 3rem; }
       #principal #categorias #generos .borde_3 {
         border: 0.25rem solid transparent;
-        opacity: 0;
-        /* transition: opacity 0.5s ease-in; */ }
+        opacity: 0; }
         #principal #categorias #generos .borde_3 .belico {
           background-image: url(../media/genres/belico.jpg);
           background-size: cover;
@@ -484,8 +466,7 @@ body {
             bottom: 3rem; }
       #principal #categorias #generos .borde_4 {
         border: 0.25rem solid transparent;
-        opacity: 0;
-        /* transition: opacity 0.5s ease-in; */ }
+        opacity: 0; }
         #principal #categorias #generos .borde_4 .ciencia_ficcion {
           background-image: url(../media/genres/ciencia_ficcion.jpg);
           background-size: cover;
@@ -515,8 +496,7 @@ body {
             bottom: 3rem; }
       #principal #categorias #generos .borde_5 {
         border: 0.25rem solid transparent;
-        opacity: 0;
-        /* transition: opacity 0.5s ease-in; */ }
+        opacity: 0; }
         #principal #categorias #generos .borde_5 .comedia {
           background-image: url(../media/genres/comedia.jpg);
           background-size: cover;
@@ -546,8 +526,7 @@ body {
             bottom: 3rem; }
       #principal #categorias #generos .borde_6 {
         border: 0.25rem solid transparent;
-        opacity: 0;
-        /* transition: opacity 0.5s ease-in; */ }
+        opacity: 0; }
         #principal #categorias #generos .borde_6 .crimen {
           background-image: url(../media/genres/crimen.jpg);
           background-size: cover;
@@ -577,8 +556,7 @@ body {
             bottom: 3rem; }
       #principal #categorias #generos .borde_7 {
         border: 0.25rem solid transparent;
-        opacity: 0;
-        /* transition: opacity 0.5s ease-in; */ }
+        opacity: 0; }
         #principal #categorias #generos .borde_7 .drama {
           background-image: url(../media/genres/drama.jpg);
           background-size: cover;
@@ -608,8 +586,7 @@ body {
             bottom: 3rem; }
       #principal #categorias #generos .borde_8 {
         border: 0.25rem solid transparent;
-        opacity: 0;
-        /* transition: opacity 0.5s ease-in; */ }
+        opacity: 0; }
         #principal #categorias #generos .borde_8 .fantasia {
           background-image: url(../media/genres/fantasia.jpg);
           background-size: cover;
@@ -639,8 +616,7 @@ body {
             bottom: 3rem; }
       #principal #categorias #generos .borde_9 {
         border: 0.25rem solid transparent;
-        opacity: 0;
-        /* transition: opacity 0.5s ease-in; */ }
+        opacity: 0; }
         #principal #categorias #generos .borde_9 .terror {
           background-image: url(../media/genres/terror.jpg);
           background-size: cover;
@@ -670,8 +646,7 @@ body {
             bottom: 3rem; }
       #principal #categorias #generos .borde_10 {
         border: 0.25rem solid transparent;
-        opacity: 0;
-        /* transition: opacity 0.5s ease-in; */ }
+        opacity: 0; }
         #principal #categorias #generos .borde_10 .thriller {
           background-image: url(../media/genres/thriller.jpg);
           background-size: cover;
@@ -758,7 +733,6 @@ body {
           width: auto;
           height: 25rem;
           margin-top: 2rem;
-          /* margin-right: -4rem; */
           transform: rotateY(25deg);
           transition: 1s ease-in-out;
           filter: saturate(50%) brightness(90%); }
@@ -1047,8 +1021,7 @@ body {
     grid-area: footer;
     background-image: url(../media/backgrounds/background_14.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-    /* background-color: $focus; */ }
+    background-size: cover; }
     #principal #footer .sombra {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
@@ -1088,8 +1061,7 @@ body {
         grid-area: copyright;
         color: #ffffff;
         font-weight: 100;
-        text-align: center;
-        /* margin: auto; */ }
+        text-align: center; }
       #principal #footer .sombra form {
         grid-area: formulario;
         display: flex;
@@ -1124,3 +1096,144 @@ body {
           border-radius: 0rem;
           margin: auto;
           margin-top: 0.5rem; }
+
+/* LISTA COMPLETA */
+.back {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.7); }
+
+#completa {
+  background-color: #1f1f1f;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  height: auto; }
+  #completa .sombra {
+    height: 100%; }
+  #completa .to_top {
+    height: 0rem;
+    position: sticky;
+    top: 40rem;
+    margin-right: 5rem;
+    text-align: right;
+    z-index: 2; }
+    #completa .to_top i {
+      color: #ff684e;
+      font-size: 2rem;
+      transition: all 0.5s ease-in; }
+    #completa .to_top i:hover {
+      transform: translateY(-1rem); }
+  #completa .posters {
+    width: 92%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 8.15rem);
+    grid-template-rows: auto;
+    grid-gap: 0.5rem;
+    filter: grayscale(20%) brightness(90%);
+    padding-top: 8rem;
+    transition: 1s; }
+    #completa .posters .movie {
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 13.8rem;
+      border-radius: 6px;
+      box-shadow: 0px 0px 10px black;
+      position: relative;
+      transition: 1s; }
+      #completa .posters .movie .resaltado {
+        position: relative;
+        color: #dddddd;
+        width: 100%;
+        height: 100%; }
+        #completa .posters .movie .resaltado p {
+          position: relative;
+          z-index: -1; }
+      #completa .posters .movie .resaltado::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        top: 0;
+        right: 0;
+        width: 8.15rem;
+        opacity: 0;
+        transition: all 0.5s ease;
+        background-color: rgba(24, 24, 24, 0.7);
+        backdrop-filter: blur(10px);
+        border-radius: 5px; }
+      #completa .posters .movie .resaltado:hover p {
+        z-index: 2;
+        font-size: 0.8rem;
+        padding-left: 1rem;
+        padding-top: 0.5rem;
+        padding-right: 1rem;
+        transition-delay: 0.3s; }
+        #completa .posters .movie .resaltado:hover p strong {
+          font-size: 1rem; }
+      #completa .posters .movie .resaltado:hover::after {
+        top: 0;
+        bottom: 0;
+        opacity: 1;
+        z-index: 1; }
+    #completa .posters .movie::before {
+      content: "";
+      color: #ff684e;
+      font-size: 1.5rem;
+      position: absolute;
+      right: 1rem;
+      bottom: 0.5rem;
+      font-weight: 600;
+      z-index: 3;
+      transition: 1s;
+      opacity: 0; }
+    #completa .posters .movie:hover::before {
+      opacity: 1; }
+  #completa .orden {
+    align-items: center; }
+    #completa .orden .filtros {
+      display: flex; }
+      #completa .orden .filtros a {
+        position: relative;
+        color: #ff684e;
+        font-size: 1.2rem;
+        font-weight: 600;
+        z-index: 2;
+        margin-top: 4.2rem;
+        margin-left: 4rem;
+        margin-bottom: 3rem; }
+      #completa .orden .filtros a:hover {
+        color: #dddddd; }
+    #completa .orden .open a {
+      color: #dddddd; }
+    #completa .orden .verMas {
+      display: flex; }
+      #completa .orden .verMas i {
+        position: relative;
+        color: #ff684e;
+        font-size: 2rem;
+        margin-top: 4rem;
+        margin-left: 38rem;
+        margin-bottom: 3rem;
+        z-index: 3;
+        transition: 0.5s all ease-in;
+        cursor: pointer; }
+      #completa .orden .verMas i:hover {
+        transform: rotate(90deg); }
+
+#baseFiltro {
+  position: absolute;
+  background-color: #ff684e;
+  width: 17.5rem;
+  height: 100%;
+  top: 0rem;
+  left: 0rem;
+  transform: translateX(-17.5rem); }
+  #baseFiltro ul {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 3rem; }
+
+.showMenu {
+  transform: translateX(17.5rem); }

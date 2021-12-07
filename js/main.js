@@ -65,7 +65,7 @@ function random(max) {
 // Defino arrays
 // const generos = ["Acción","Animadas","Bélico","Ciencia ficción","Comedia","Crimen","Drama","Fantasía","Terror","Thriller"]
 
-var movies = $.getJSON("/json/movies.json")
+var movies = $.getJSON("movies-website/json/movies.json")
 
 movies.done(function(movies){
     // PELICULA SEGÚN DÍA (recomendaciones)

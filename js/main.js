@@ -22,7 +22,7 @@ else {
 
 
 // AUTOPLAY (portada)
-if (window.location.href == "http://127.0.0.1:5500/index.html" ) {
+if (window.location.href == "https://herreracesar.github.io/movies-website/index.html" ) {
     let video = document.querySelector('video');
     let isPaused = false;
     let observer = new IntersectionObserver((entries) => { 
@@ -64,7 +64,7 @@ function random(max) {
 
 // Defino arrays
 // const generos = ["Acción","Animadas","Bélico","Ciencia ficción","Comedia","Crimen","Drama","Fantasía","Terror","Thriller"]
-const movies = $.getJSON('../../json/movies.json');
+const movies = $.getJSON('https://herreracesar.github.io/movies-website/json/movies.json');
 
 
 movies.done(function(movies){

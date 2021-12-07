@@ -10,13 +10,15 @@
     width: 100%;
     height: auto;
     .sombra {
-        height: 100%;
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
     }
     .to_top {
         height: 0rem;
         position: sticky;
         top: 40rem;
-        margin-right: 5rem;
+        margin-right: 4rem;
         text-align: right;
         z-index: 2;
         i {
@@ -32,45 +34,42 @@
         width: 92%;
         margin: auto;
         display: grid;
-        grid-template-columns: repeat(auto-fill, 8.15rem);
+        grid-template-columns: repeat(auto-fill, $width_poster);
         grid-template-rows: auto;
         grid-gap: 0.5rem;
         filter: grayscale(20%) brightness(90%);
         padding-top: 8rem;
-        transition: 1s;
         .movie {
+            background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            height: 13.8rem;
+            height: $width_poster*1.5;
             border-radius: 6px;
-            box-shadow: 0px 0px 10px rgb(0, 0, 0);
-            position: relative;
-            transition: 1s;
+            box-shadow: 0px 0px 10px #000000;
             .resaltado {
                 position: relative;
                 color: $light2;
                 width: 100%;
                 height: 100%;
                 p {
+                    opacity: 0;
                     position: relative;
                     z-index: -1;
                 }
-            }
-            .resaltado::after {
-                content: "";
-                position: absolute;
-                bottom: 100%;
-                top: 0;
-                right: 0;
-                width: 8.15rem;
-                opacity: 0;
-                transition: all 0.5s ease;
-                background-color: rgba(24, 24, 24, 0.7);
-                backdrop-filter: blur($blur);
-                border-radius: 5px;
+                span {
+                    color: $focus;
+                    font-size: 1.3rem;
+                    position: absolute;
+                    right: 1rem;
+                    bottom: 0.5rem;
+                    font-weight: 600;
+                    z-index: 3;
+                    opacity: 0;
+                }
             }
             .resaltado:hover {
                 p {
+                    opacity: 1;
                     z-index: 2;
                     font-size: 0.8rem;
                     padding-left: 1rem;
@@ -81,63 +80,47 @@
                         font-size: 1rem;
                     }
                 }
+                span {
+                    transition-delay: 0.3s;
+                    opacity: 1;
+                }
+            }
+            .resaltado::after {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                top: 0;
+                right: 0;
+                width: $width_poster;
+                opacity: 0;
+                transition: all 0.5s ease;
+                background-color: rgba(24, 24, 24, 0.7);
+                backdrop-filter: blur($blur);
+                border-radius: 5px;
             }
             .resaltado:hover::after {
-                top: 0;
                 bottom: 0;
                 opacity: 1;
-                z-index: 1;
             }
-        }
-        .movie::before {
-            content: "";
-            color: $focus;
-            font-size: 1.5rem;
-            position: absolute;
-            right: 1rem;
-            bottom: 0.5rem;
-            font-weight: 600;
-            z-index: 3;
-            transition: 1s;
-            opacity: 0;
-        }
-        .movie:hover::before {
-            opacity: 1;
         }
     }
     .orden {
-        align-items: center;
-        .filtros {
-            display: flex;
+        justify-content: space-between;
+        width: 50vw;
+        margin-top: 4rem;
+        padding-bottom: 3rem;
+        .mensaje {
             a {
-                position: relative;
                 color: $focus;
-                font-size: 1.2rem;
-                font-weight: 600;
-                z-index: 2;
-                margin-top: 4.2rem;
+                font-size: 0.8rem;
+                font-weight: 300;
                 margin-left: 4rem;
-                margin-bottom: 3rem;
-            }
-            a:hover {
-                color: $light2;
-            }
-        }
-        .open {
-            a {
-                color: $light2;
             }
         }
         .verMas {
-            display: flex;
             i {
-                position: relative;
                 color: $focus;
                 font-size: 2rem;
-                margin-top: 4rem;
-                margin-left: 38rem;
-                margin-bottom: 3rem;
-                z-index: 3;
                 transition: 0.5s all ease-in;
                 cursor: pointer;
             }
@@ -148,21 +131,33 @@
     }
 }
 #baseFiltro {
-    position: absolute;
+    position: fixed;
     background-color: $focus;
     width: 17.5rem;
     height: 100%;
     top: 0rem;
-    left: 0rem;
-    transform: translateX(-17.5rem);
-    ul {
+    left: -17.5rem;
+    transition: 0.5s ease-in-out;
+    form {
         height: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-end;
-        align-items: center;
-        padding-bottom: 3rem;
+        width: 100%;
+        ul {
+            margin:auto;
+            height: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-top: 8rem;
+            padding-bottom: 4rem;
+            padding-left: 4rem;
+            width: 100%;
+            .title {
+                color: $focus;
+            }
+        }
     }
+    
 } 
 .showMenu {
     transform: translateX(17.5rem);

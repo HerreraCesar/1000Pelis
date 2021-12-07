@@ -315,10 +315,10 @@ body {
           font-weight: 300;
           color: #ffffff;
           display: inline; }
-        #principal #recomendar .sombra .datos div div .logos {
+        #principal #recomendar .sombra .datos div a .logos {
           height: 1.4rem;
           margin-right: 2rem; }
-        #principal #recomendar .sombra .datos div div .puntuacion {
+        #principal #recomendar .sombra .datos div a .puntuacion {
           font-size: 1.4rem;
           font-weight: 500;
           color: #ff684e;
@@ -1108,12 +1108,14 @@ body {
   width: 100%;
   height: auto; }
   #completa .sombra {
-    height: 100%; }
+    width: 100%;
+    height: auto;
+    min-height: 100vh; }
   #completa .to_top {
     height: 0rem;
     position: sticky;
     top: 40rem;
-    margin-right: 5rem;
+    margin-right: 4rem;
     text-align: right;
     z-index: 2; }
     #completa .to_top i {
@@ -1126,41 +1128,38 @@ body {
     width: 92%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 8.15rem);
+    grid-template-columns: repeat(auto-fill, 9.15rem);
     grid-template-rows: auto;
     grid-gap: 0.5rem;
     filter: grayscale(20%) brightness(90%);
-    padding-top: 8rem;
-    transition: 1s; }
+    padding-top: 8rem; }
     #completa .posters .movie {
+      background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      height: 13.8rem;
+      height: 13.725rem;
       border-radius: 6px;
-      box-shadow: 0px 0px 10px black;
-      position: relative;
-      transition: 1s; }
+      box-shadow: 0px 0px 10px #000000; }
       #completa .posters .movie .resaltado {
         position: relative;
         color: #dddddd;
         width: 100%;
         height: 100%; }
         #completa .posters .movie .resaltado p {
+          opacity: 0;
           position: relative;
           z-index: -1; }
-      #completa .posters .movie .resaltado::after {
-        content: "";
-        position: absolute;
-        bottom: 100%;
-        top: 0;
-        right: 0;
-        width: 8.15rem;
-        opacity: 0;
-        transition: all 0.5s ease;
-        background-color: rgba(24, 24, 24, 0.7);
-        backdrop-filter: blur(10px);
-        border-radius: 5px; }
+        #completa .posters .movie .resaltado span {
+          color: #ff684e;
+          font-size: 1.3rem;
+          position: absolute;
+          right: 1rem;
+          bottom: 0.5rem;
+          font-weight: 600;
+          z-index: 3;
+          opacity: 0; }
       #completa .posters .movie .resaltado:hover p {
+        opacity: 1;
         z-index: 2;
         font-size: 0.8rem;
         padding-left: 1rem;
@@ -1169,71 +1168,66 @@ body {
         transition-delay: 0.3s; }
         #completa .posters .movie .resaltado:hover p strong {
           font-size: 1rem; }
-      #completa .posters .movie .resaltado:hover::after {
+      #completa .posters .movie .resaltado:hover span {
+        transition-delay: 0.3s;
+        opacity: 1; }
+      #completa .posters .movie .resaltado::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
         top: 0;
+        right: 0;
+        width: 9.15rem;
+        opacity: 0;
+        transition: all 0.5s ease;
+        background-color: rgba(24, 24, 24, 0.7);
+        backdrop-filter: blur(10px);
+        border-radius: 5px; }
+      #completa .posters .movie .resaltado:hover::after {
         bottom: 0;
-        opacity: 1;
-        z-index: 1; }
-    #completa .posters .movie::before {
-      content: "";
-      color: #ff684e;
-      font-size: 1.5rem;
-      position: absolute;
-      right: 1rem;
-      bottom: 0.5rem;
-      font-weight: 600;
-      z-index: 3;
-      transition: 1s;
-      opacity: 0; }
-    #completa .posters .movie:hover::before {
-      opacity: 1; }
+        opacity: 1; }
   #completa .orden {
-    align-items: center; }
-    #completa .orden .filtros {
-      display: flex; }
-      #completa .orden .filtros a {
-        position: relative;
-        color: #ff684e;
-        font-size: 1.2rem;
-        font-weight: 600;
-        z-index: 2;
-        margin-top: 4.2rem;
-        margin-left: 4rem;
-        margin-bottom: 3rem; }
-      #completa .orden .filtros a:hover {
-        color: #dddddd; }
-    #completa .orden .open a {
-      color: #dddddd; }
-    #completa .orden .verMas {
-      display: flex; }
-      #completa .orden .verMas i {
-        position: relative;
-        color: #ff684e;
-        font-size: 2rem;
-        margin-top: 4rem;
-        margin-left: 38rem;
-        margin-bottom: 3rem;
-        z-index: 3;
-        transition: 0.5s all ease-in;
-        cursor: pointer; }
-      #completa .orden .verMas i:hover {
-        transform: rotate(90deg); }
+    justify-content: space-between;
+    width: 50vw;
+    margin-top: 4rem;
+    padding-bottom: 3rem; }
+    #completa .orden .mensaje a {
+      color: #ff684e;
+      font-size: 0.8rem;
+      font-weight: 300;
+      margin-left: 4rem; }
+    #completa .orden .verMas i {
+      color: #ff684e;
+      font-size: 2rem;
+      transition: 0.5s all ease-in;
+      cursor: pointer; }
+    #completa .orden .verMas i:hover {
+      transform: rotate(90deg); }
 
 #baseFiltro {
-  position: absolute;
+  position: fixed;
   background-color: #ff684e;
   width: 17.5rem;
   height: 100%;
   top: 0rem;
-  left: 0rem;
-  transform: translateX(-17.5rem); }
-  #baseFiltro ul {
+  left: -17.5rem;
+  transition: 0.5s ease-in-out; }
+  #baseFiltro form {
     height: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 3rem; }
+    width: 100%; }
+    #baseFiltro form ul {
+      margin: auto;
+      height: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      padding-left: 4rem;
+      width: 100%; }
+      #baseFiltro form ul .title {
+        color: #ff684e; }
 
 .showMenu {
   transform: translateX(17.5rem); }

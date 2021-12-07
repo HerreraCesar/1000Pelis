@@ -23,7 +23,8 @@
         </div>
         <!-- ENLACES -->
         <nav id="enlaces" class="orden">
-            <a href="../../index.html#principal">Volver</a>
+            <a href="../../index.html#principal">VOLVER</a>
+            <a id="menuFiltro" class="filtros" href="index.html#mil">FILTROS</a>
         </nav>
         <!-- BOTONES -->
         <div id="botones" class="orden">
@@ -48,63 +49,41 @@
             <div class="sombra">
                 <div class="posters"></div>
                 <div class="orden">
-                    <div id="menuFiltro" class="filtros"><a href="index.html#mil">FILTROS</a></div>
+                    <div class="mensaje"><a>Hecho con amor y pochoclos en Rosario, Argentina.</a></div>
                     <div class="verMas"><i class="fas fa-plus mas"></i></div>
                 </div>
             </div>
-            <!-- FILTROS -->
-            <div id="baseFiltro">
-                <div class="sombra">
+        </section>
+        <!-- FILTROS -->
+        <div id="baseFiltro">
+            <div class="sombra">
+                <form action="">
                     <ul>
                         <li>
-                            <span>Género</span>
-                            <select name="" id="">
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
+                            <!-- <span>Género</span> -->
+                            <select name="" id="generosFiltrados">
+                                <option value="" selected disabled hidden>Género</option>
                             </select>
                         </li>
                         <li>
-                            <span>Director</span>
-                            <select name="" id="">
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
+                            <!-- <span>Director</span> -->
+                            <select name="" id="directoresFiltrados">
+                                <option value="" selected disabled hidden>Director</option>
                             </select>
                         </li>
                         <li>
-                            <span>Grupo</span>
-                            <select name="" id="">
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
+                            <!-- <span>Año</span> -->
+                            <select name="" id="añosFiltrados">
+                                <option value="" selected disabled hidden>Año</option>
                             </select>
+                        </li>
+                        <li id="reset">
+                            <input type="reset" value="Limpiar"></input>
                         </li>
                     </ul>
-                </div>
+                </form>
             </div>
-        </section>
+        </div>
     </main>
     <!-- SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

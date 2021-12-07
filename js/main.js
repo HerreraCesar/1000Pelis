@@ -77,7 +77,7 @@ movies.done(function(movies){
         diaCero = new Date(ahora);
         contador = Math.floor((hoy.getTime() - diaCero.getTime())/86400000)+1;
         if ($('.check').prop('checked') == false) {
-            $('#poster').attr('src',`media/posters/${contador}.jpg`);
+            $('#poster').attr('src',`https://herreracesar.github.io/movies-website/media/posters/${contador}.jpg`);
         }
         else {
             $('#poster').attr('src',`../../media/posters/${contador}.jpg`);
@@ -96,7 +96,7 @@ movies.done(function(movies){
     else {
         // Compruebo el idioma de la página para referenciar la imágen
         if ($('.check').prop('checked') == false) {
-            $('#poster').attr('src',`media/posters/${contador}.jpg`);
+            $('#poster').attr('src',`https://herreracesar.github.io/movies-website/media/posters/${contador}.jpg`);
         }
         else {
             $('#poster').attr('src',`../../media/posters/${contador}.jpg`);
@@ -117,7 +117,7 @@ movies.done(function(movies){
         let luck = random(movies.length);
         // Compruebo el idioma de la página para referenciar la imágen
         if ($('.check').prop('checked') == false) {
-            $('#poster').attr('src',`media/posters/${luck}.jpg`);
+            $('#poster').attr('src',`https://herreracesar.github.io/movies-website/media/posters/${luck}.jpg`);
         }
         else {
             $('#poster').attr('src',`../../media/posters/${luck}.jpg`);

@@ -64,8 +64,8 @@ function random(max) {
 
 // Defino arrays
 // const generos = ["Acción","Animadas","Bélico","Ciencia ficción","Comedia","Crimen","Drama","Fantasía","Terror","Thriller"]
-const datos = 'https://herreracesar.github.io/movies-website/json/movies.json';
-const movies = JSON.parse(datos)
+
+var movies = $.getJSON("/json/movies.json")
 
 movies.done(function(movies){
     // PELICULA SEGÚN DÍA (recomendaciones)

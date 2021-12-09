@@ -27,7 +27,7 @@ body {
 }
 .orden {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
 }
 .botones {
     height: 2rem;

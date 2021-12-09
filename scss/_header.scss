@@ -4,7 +4,7 @@
     display: grid;
     grid-template-areas: "logo enlaces botones";
     grid-template-rows: 5rem;
-    grid-template-columns: 2fr 7fr 2fr;
+    grid-template-columns: 18rem auto 14rem;
     position: fixed;
     top: 0rem;
     width: 100vw;
@@ -36,7 +36,7 @@
     #enlaces {
         grid-area: enlaces;
         margin: auto;
-        margin-top: 1.3rem;
+        margin-top: 1.8rem;
         a {
             position: relative;
             color: $light2;
@@ -70,6 +70,7 @@
     #botones {
         grid-area: botones;
         margin: auto;
+        margin-right: 6rem;
         align-items: center;
         div i {
             font-size: 1.5rem;
@@ -84,8 +85,8 @@
             position: relative;
             width: 2rem;
             margin-bottom: 1rem;
-            margin-left: 1rem;
-            margin-right: 2rem;
+            margin-left: 0.5rem;
+            margin-right: 1.5rem;
             cursor: pointer;
         }
         .check:hover::before {

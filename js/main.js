@@ -93,7 +93,44 @@ $( document ).ready( function() {
                 generos.push(movie.genero)
             }
         });
-        let genres = ["Action","Animation","War","Sci-Fi","Comedy","Crime","Drama","Fantasy","Terror","Thriller"]
+        let genres = [
+            {
+            "en":"Action",
+            "es":"Acción",
+            },
+            {
+            "en":"Animation",
+            "es":"Animadas",
+            },
+            {
+            "en":"War",
+            "es":"Bélico",
+            },
+            {
+            "en":"Sci-Fi",
+            "es":"Ciencia ficción",
+            },
+            {
+            "en":"Comedy",
+            "es":"Comedia",
+            },
+            {
+            "en":"Drama",
+            "es":"Drama",
+            },
+            {
+            "en":"Fantasy",
+            "es":"Fantasía",
+            },
+            {
+            "en":"Terror",
+            "es":"Terror",
+            },
+            {
+            "en":"Thriller",
+            "es":"Thriller",
+            }
+        ]
         let años = [];
         movies.forEach(movie => {
             if (!años.includes(movie.año)) {
@@ -128,10 +165,9 @@ $( document ).ready( function() {
 
         // MUESTRO OPCIONES DE FILTRO
         if ($('.check').prop('checked') == true) {
-            genres.forEach(genre => {
-                console.log(1);
-                $('#generosFiltrados').append(`<option value="${genre}">${genre}</option>`);
-                console.log(genre);
+            genres.forEach(function (genre) {
+                $('#generosFiltrados').append(`<option value="${genre.es}">${genre.en}</option>`);
+                
             });
         }
         else {

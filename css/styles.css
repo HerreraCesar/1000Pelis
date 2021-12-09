@@ -22,7 +22,7 @@ body {
 
 .orden {
   display: flex;
-  flex-flow: row nowrap; }
+  flex-flow: row wrap; }
 
 .botones {
   height: 2rem;
@@ -43,7 +43,7 @@ body {
   display: grid;
   grid-template-areas: "logo enlaces botones";
   grid-template-rows: 5rem;
-  grid-template-columns: 2fr 7fr 2fr;
+  grid-template-columns: 18rem auto 14rem;
   position: fixed;
   top: 0rem;
   width: 100vw;
@@ -73,7 +73,7 @@ body {
   #navbar #enlaces {
     grid-area: enlaces;
     margin: auto;
-    margin-top: 1.3rem; }
+    margin-top: 1.8rem; }
     #navbar #enlaces a {
       position: relative;
       color: #dddddd;
@@ -101,6 +101,7 @@ body {
   #navbar #botones {
     grid-area: botones;
     margin: auto;
+    margin-right: 6rem;
     align-items: center; }
     #navbar #botones div i {
       font-size: 1.5rem;
@@ -113,8 +114,8 @@ body {
       position: relative;
       width: 2rem;
       margin-bottom: 1rem;
-      margin-left: 1rem;
-      margin-right: 2rem;
+      margin-left: 0.5rem;
+      margin-right: 1.5rem;
       cursor: pointer; }
     #navbar #botones .check:hover::before {
       transition: 0.5s;
@@ -170,7 +171,7 @@ body {
         height: auto;
         z-index: -4; }
       #principal #portada .sombra .titular {
-        padding: 6rem 0rem 2rem 4rem;
+        padding: 6rem 6rem 2rem 4rem;
         width: 100%; }
       #principal #portada .sombra h1 {
         margin: 1rem 0rem;
@@ -246,7 +247,7 @@ body {
       #principal #portada .sombra button:hover {
         background-color: #ff684e; }
   #principal .base {
-    width: 75vw;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;

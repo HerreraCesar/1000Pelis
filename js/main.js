@@ -1,30 +1,19 @@
 $( document ).ready( function() {
-
-    // 1000 Movies
-
-
     // MULTILANGUAGE (switch)
     $('.check').click( function() {
         if ($('.check').prop('checked') == true) {
-            location.href='/pages/en/index.html';
+            location.href='https://herreracesar.github.io/movies-website/pages/en/index.html';
         }
         else {
-            location.href="../../index.html";
+            location.href='https://herreracesar.github.io/movies-website/index.html';
         }
     });
 
-
     // TRAILER ALEATORIO (portada)
-    if ($('.check').prop('checked') == false) {
-        $('#trailer').html(`<video src="media/trailers/${random(10)}.mp4" autoplay muted loop></video>`);
-    }
-    else {
-        $('#trailer').html(`<video src="../../media/trailers/${random(10)}.mp4" autoplay muted loop></video>`);
-    }
-
+    $('#trailer').html(`<video src="https://herreracesar.github.io/movies-website/media/trailers/${random(10)}.mp4" autoplay muted loop></video>`);
 
     // AUTOPLAY (portada)
-    if (window.location.href == "https://herreracesar.github.io/movies-website/index.html" ) {
+    if (window.location.href == "https://herreracesar.github.io/movies-website/index.html" || window.location.href == "https://herreracesar.github.io/movies-website/pages/en/index.html") {
         let video = document.querySelector('video');
         let isPaused = false;
         let observer = new IntersectionObserver((entries) => { 
@@ -41,7 +30,6 @@ $( document ).ready( function() {
         observer.observe(video);
     }
 
-
     // SCROLLSPY (menú navegación)
     let section = document.querySelectorAll('main div section');
     window.onscroll = () => {
@@ -57,18 +45,13 @@ $( document ).ready( function() {
         })
     }
 
-
     // FUNCION ALEATORIEDAD
     function random(max) {
         return Math.floor((Math.random()*max)+1);
     }
 
-
-    // Defino arrays
-    // const generos = ["Acción","Animadas","Bélico","Ciencia ficción","Comedia","Crimen","Drama","Fantasía","Terror","Thriller"]
-
+    // OBTENGO ARRAY DE PELICULAS
     var movies = $.getJSON("https://herreracesar.github.io/movies-website/json/movies.json")
-
     movies.done(function(movies){
         // PELICULA SEGÚN DÍA (recomendaciones)
         let hoy = new Date();
@@ -78,62 +61,29 @@ $( document ).ready( function() {
             let ahora = Date.now();
             diaCero = new Date(ahora);
             contador = Math.floor((hoy.getTime() - diaCero.getTime())/86400000)+1;
-            if ($('.check').prop('checked') == false) {
-                $('#poster').attr('src',`https://herreracesar.github.io/movies-website/media/posters/${contador}.jpg`);
-            }
-            else {
-                $('#poster').attr('src',`../../media/posters/${contador}.jpg`);
-            }
-            $('#id').hide().html(`#${movies[contador-1].id}`).fadeIn("slow");
-            $('#nombre').hide().html(movies[contador-1].titulo).slideDown("slow");
-            $('#director').hide().html(movies[contador-1].director).fadeIn("slow");
-            $('#año').hide().html(movies[contador-1].año).fadeIn("slow");
-            $('#imdb').hide().html(movies[contador-1].imdb).fadeIn("slow");
-            $('#filmaffinity').hide().html(movies[contador-1].filmaffinity).fadeIn("slow");
-            $('#rottentomatoes').hide().html(movies[contador-1].rottentomatoes).fadeIn("slow");
-            $('#link1').attr('href', movies[contador-1].link1).attr('target','_blank');
-            $('#link2').attr('href', movies[contador-1].link2).attr('target','_blank');
-            $('#link3').attr('href', movies[contador-1].link3).attr('target','_blank')
+            cargarDatos(contador)
         }
         else {
-            // Compruebo el idioma de la página para referenciar la imágen
-            if ($('.check').prop('checked') == false) {
-                $('#poster').attr('src',`https://herreracesar.github.io/movies-website/media/posters/${contador}.jpg`);
-            }
-            else {
-                $('#poster').attr('src',`../../media/posters/${contador}.jpg`);
-            }
-            $('#id').hide().html(`#${contador}`).fadeIn("slow");
-            $('#nombre').hide().html(movies[contador-1].titulo).slideDown("slow");
-            $('#director').hide().html(movies[contador-1].director).fadeIn("slow");
-            $('#año').hide().html(movies[contador-1].año).fadeIn("slow");
-            $('#imdb').hide().html(movies[contador-1].imdb).fadeIn("slow");
-            $('#filmaffinity').hide().html(movies[contador-1].filmaffinity).fadeIn("slow");
-            $('#rottentomatoes').hide().html(movies[contador-1].rottentomatoes).fadeIn("slow");
-            $('#link1').attr('href', movies[contador-1].link1).attr('target','_blank');
-            $('#link2').attr('href', movies[contador-1].link2).attr('target','_blank');
-            $('#link3').attr('href', movies[contador-1].link3).attr('target','_blank')
+            cargarDatos(contador)
         }
+        function cargarDatos(origen) {
+            $('#poster').attr('src',`https://herreracesar.github.io/movies-website/media/posters/${origen}.jpg`);
+            $('#id').hide().html(`#${movies[origen-1].id}`).fadeIn("slow");
+            $('#nombre').hide().html(movies[origen-1].titulo).slideDown("slow");
+            $('#director').hide().html(movies[origen-1].director).fadeIn("slow");
+            $('#año').hide().html(movies[origen-1].año).fadeIn("slow");
+            $('#imdb').hide().html(movies[origen-1].imdb).fadeIn("slow");
+            $('#filmaffinity').hide().html(movies[origen-1].filmaffinity).fadeIn("slow");
+            $('#rottentomatoes').hide().html(movies[origen-1].rottentomatoes).fadeIn("slow");
+            $('#link1').attr('href', movies[origen-1].link1).attr('target','_blank');
+            $('#link2').attr('href', movies[origen-1].link2).attr('target','_blank');
+            $('#link3').attr('href', movies[origen-1].link3).attr('target','_blank')
+        }
+
         // PELICULA AL AZAR (recomendaciones)
         $('#suerte').click(function() {
             let luck = random(movies.length);
-            // Compruebo el idioma de la página para referenciar la imágen
-            if ($('.check').prop('checked') == false) {
-                $('#poster').attr('src',`https://herreracesar.github.io/movies-website/media/posters/${luck}.jpg`);
-            }
-            else {
-                $('#poster').attr('src',`../../media/posters/${luck}.jpg`);
-            }
-            $('#id').hide().html(`#${movies[luck-1].id}`).fadeIn("slow");
-            $('#nombre').hide().html(movies[luck-1].titulo).slideDown("slow");
-            $('#director').hide().html(movies[luck-1].director).fadeIn("slow");
-            $('#año').hide().html(movies[luck-1].año).fadeIn("slow");
-            $('#imdb').hide().html(movies[luck-1].imdb).fadeIn("slow");
-            $('#filmaffinity').hide().html(movies[luck-1].filmaffinity).fadeIn("slow");
-            $('#rottentomatoes').hide().html(movies[luck-1].rottentomatoes).fadeIn("slow");
-            $('#link1').attr('href', movies[luck-1].link1).attr('target','_blank');
-            $('#link2').attr('href', movies[luck-1].link2).attr('target','_blank');
-            $('#link3').attr('href', movies[luck-1].link3).attr('target','_blank')
+            cargarDatos(luck)
         });
         
         // ARMADO DE ARRAYS PARA FILTROS
@@ -170,7 +120,7 @@ $( document ).ready( function() {
         function ordenar (a, b) {
             return b - a;
         }
-        años.sort(ordenar)
+        años.sort(ordenar);
         generos.sort();
         directores.sort();
 
@@ -194,17 +144,14 @@ $( document ).ready( function() {
         var resultado = [];
         $('#generosFiltrados').change(function (seleccion) {
             filtros.generos = seleccion.target.value;
-            console.log(filtros);
             filtrarPeliculas();
         });
         $('#añosFiltrados').change(function (seleccion) {
             filtros.años = seleccion.target.value;
-            console.log(filtros);
             filtrarPeliculas();
         });
         $('#directoresFiltrados').change(function (seleccion) {
             filtros.directores = seleccion.target.value;
-            console.log(filtros);
             filtrarPeliculas();
         });
         function filtrarPeliculas() {
@@ -291,7 +238,7 @@ $( document ).ready( function() {
             for (let i = contar; i < longitud; i++) {
                 const movie = resultado[i];
                 $('.posters').append(`
-                                        <a class="movie" href="#" style="background-image: url(../../${movie.poster})">
+                                        <a class="movie" href="#" style="background-image: url(https://herreracesar.github.io/movies-website/${movie.poster})">
                                             <div class="resaltado">
                                                 <p><strong>${movie.titulo}</strong></p>
                                                 <p>${movie.año}</p>
@@ -310,10 +257,6 @@ $( document ).ready( function() {
         })
     });
 
-
-
-
-
     // OFF-CANVAS (filtros)
     $('#menuFiltro').click(function(e) {
         e.preventDefault();
@@ -321,7 +264,6 @@ $( document ).ready( function() {
         $('#completa').toggleClass('showMenu');
         $('#menuFiltro').toggleClass('active')
     });
-
 
     // ANIMACIONES CATEGORIAS (géneros)
     let animado = document.querySelectorAll('.animado');
@@ -331,12 +273,11 @@ $( document ).ready( function() {
             let alturaAnimado = animado[i].offsetTop;
             if (alturaAnimado - 300 < scrollTop) {
                 animado[i].classList.add("animar");
-                animado[i].style.animationDelay = i/4+"s";
+                animado[i].style.animationDelay = i/5+"s";
             }
         }
     }
     window.addEventListener('scroll', mostrarScroll);
-
 
     // POP-UP (contribuciones)
     let redes = document.querySelectorAll('.red');

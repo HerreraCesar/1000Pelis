@@ -1220,14 +1220,23 @@ body {
       height: 100%;
       display: flex;
       flex-flow: column nowrap;
-      justify-content: space-between;
+      /* justify-content: space-between; */
       align-items: flex-start;
       padding-top: 8rem;
       padding-bottom: 4rem;
       padding-left: 4rem;
-      width: 100%; }
-      #baseFiltro form ul .title {
-        color: #ff684e; }
+      width: 100%;
+      /* .title {
+                color: $focus;
+            } */ }
+      #baseFiltro form ul select, #baseFiltro form ul input {
+        width: 10rem;
+        height: auto;
+        padding: 0.5rem;
+        margin-bottom: 2rem; }
+      #baseFiltro form ul li input {
+        position: absolute;
+        bottom: 2rem; }
 
 .showMenu {
   transform: translateX(17.5rem); }

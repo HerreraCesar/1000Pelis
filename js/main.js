@@ -93,6 +93,7 @@ $( document ).ready( function() {
                 generos.push(movie.genero)
             }
         });
+        let genres = ["Action","Animation","War","Sci-Fi","Comedy","Crime","Drama","Fantasy","Terror","Thriller"]
         let años = [];
         movies.forEach(movie => {
             if (!años.includes(movie.año)) {
@@ -123,11 +124,20 @@ $( document ).ready( function() {
         años.sort(ordenar);
         generos.sort();
         directores.sort();
+        genres.sort();
 
         // MUESTRO OPCIONES DE FILTRO
-        generos.forEach(genero => {
-            $('#generosFiltrados').append(`<option value="${genero}">${genero}</option>`)
-        });
+        if ($('.check').prop('checked') == true) {
+            genres.forEach(genero => {
+                $('#generosFiltrados').append(`<option value="${genero}">${genero}</option>`)
+            });
+        }
+        else {
+            generos.forEach(genero => {
+                $('#generosFiltrados').append(`<option value="${genero}">${genero}</option>`)
+            });
+        }
+        
         directores.forEach(director => {
             $('#directoresFiltrados').append(`<option value="${director}">${director}</option>`)
         });

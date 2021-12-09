@@ -53,7 +53,8 @@ body {
   /* BOTONES */ }
   #navbar #logo {
     grid-area: logo;
-    margin: auto; }
+    margin: auto;
+    margin-left: 4rem; }
     #navbar #logo a {
       color: transparent;
       font-weight: 900;

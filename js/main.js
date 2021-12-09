@@ -87,7 +87,7 @@ $( document ).ready( function() {
         });
         
         // ARMADO DE ARRAYS PARA FILTROS
-        let generos = [];
+        var generos = [];
         movies.forEach(movie => {
             if (!generos.includes(movie.genero)) {
                 generos.push(movie.genero)
@@ -128,8 +128,10 @@ $( document ).ready( function() {
 
         // MUESTRO OPCIONES DE FILTRO
         if ($('.check').prop('checked') == true) {
-            genres.forEach(genero => {
-                $('#generosFiltrados').append(`<option value="${genero}">${genero}</option>`)
+            genres.forEach(genre => {
+                console.log(1);
+                $('#generosFiltrados').append(`<option value="${genre}">${genre}</option>`);
+                console.log(genre);
             });
         }
         else {

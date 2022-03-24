@@ -10,7 +10,7 @@ $( document ).ready( function() {
     });
 
     // TRAILER ALEATORIO (portada)
-    $('#trailer').html(`<video src="../media/trailers/${random(10)}.mp4" autoplay muted loop></video>`);
+    $('#trailer').html(`<video src="https://herreracesar.github.io/movies-website/media/trailers/${random(10)}.mp4" autoplay muted loop></video>`);
 
     // AUTOPLAY (portada)
     if (window.location.pathname == "/index.html" || window.location.pathname == "/pages/en/index.html") {
@@ -51,7 +51,7 @@ $( document ).ready( function() {
     }
 
     // OBTENGO ARRAY DE PELICULAS
-    var movies = $.getJSON("https://raw.githubusercontent.com/HerreraCesar/movies-website/master/json/movies.json")
+    var movies = $.getJSON("https://herreracesar.github.io/movies-website/json/movies.json")
     movies.done(function(movies){
         // PELICULA SEGÚN DÍA (recomendaciones)
         let hoy = new Date();
@@ -67,7 +67,7 @@ $( document ).ready( function() {
             cargarDatos(contador)
         }
         function cargarDatos(origen) {
-            $('#poster').attr('src',`../media/posters/${origen}.jpg`);
+            $('#poster').attr('src',`https://herreracesar.github.io/movies-website/media/posters/${origen}.jpg`);
             $('#id').hide().html(`#${movies[origen-1].id}`).fadeIn("slow");
             $('#nombre').hide().html(movies[origen-1].title).slideDown("slow");
             $('#director').hide().html(movies[origen-1].direction.map((director) => `${director} - `)).fadeIn("slow");

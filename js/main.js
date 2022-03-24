@@ -51,7 +51,7 @@ $( document ).ready( function() {
     }
 
     // OBTENGO ARRAY DE PELICULAS
-    var movies = $.getJSON("../../json/movies.json")
+    var movies = $.getJSON("https://raw.githubusercontent.com/HerreraCesar/movies-website/master/json/movies.json")
     movies.done(function(movies){
         // PELICULA SEGÚN DÍA (recomendaciones)
         let hoy = new Date();

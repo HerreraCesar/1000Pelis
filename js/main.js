@@ -55,7 +55,7 @@ $( document ).ready( function() {
     movies.done(function(movies){
         // PELICULA SEGÚN DÍA (recomendaciones)
         let hoy = new Date();
-        let diaCero = new Date("03/01/2022");
+        let diaCero = new Date("01/01/2022");
         let contador = Math.floor((hoy.getTime() - diaCero.getTime())/86400000)+1;
         if (contador > 1000) {
             let ahora = Date.now();
@@ -87,7 +87,7 @@ $( document ).ready( function() {
         });
         
         // ARMADO DE ARRAYS PARA FILTROS
-        var generos = [];
+        let generos = [];
         movies.forEach(movie => {
             movie.genre_es.forEach(genero => {
                 if (!generos.includes(genero)) {
@@ -141,19 +141,11 @@ $( document ).ready( function() {
         });
         let directores = [];
         movies.forEach(movie => {
-            let director = movie.direction;
-            if (Array.isArray(director)) {
-                director.forEach(e => {
-                    if (!directores.includes(e)) {
-                        directores.push(e)
-                    }
-                });
-            }
-            else {
+            movie.direction.forEach(director => {
                 if (!directores.includes(director)) {
                     directores.push(director)
                 }
-            }
+            });
         });
         
         // ORDENO OPCIONES DE FILTRO
@@ -191,7 +183,7 @@ $( document ).ready( function() {
             directores: undefined,
             años: undefined,
         };
-        var resultado = [];
+        let resultado = [];
         $('#generosFiltrados').change(function (seleccion) {
             filtros.generos = seleccion.target.value;
             filtrarPeliculas();
@@ -214,7 +206,7 @@ $( document ).ready( function() {
             else if (filtros.directores == undefined && filtros.años == undefined) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.genre_es == filtros.generos;
+                    return movie.genre_es.includes(filtros.generos)
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -230,7 +222,7 @@ $( document ).ready( function() {
             else if (filtros.generos == undefined && filtros.años == undefined) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.direction == filtros.directores;
+                    return movie.direction.includes(filtros.directores)
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -238,7 +230,7 @@ $( document ).ready( function() {
             else if (filtros.generos == undefined ) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.direction == filtros.directores && movie.year == filtros.años;
+                    return movie.direction.includes(filtros.directores) && movie.year == filtros.años;
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -246,7 +238,7 @@ $( document ).ready( function() {
             else if (filtros.años == undefined ) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.direction == filtros.directores && movie.genre_es == filtros.generos;
+                    return movie.direction.includes(filtros.directores) && movie.genre_es.includes(filtros.generos);
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -254,7 +246,7 @@ $( document ).ready( function() {
             else if (filtros.directores == undefined ) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.genre_es == filtros.generos && movie.year == filtros.años;
+                    return movie.genre_es.includes(filtros.generos) && movie.year == filtros.años;
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -262,7 +254,7 @@ $( document ).ready( function() {
             else {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.direction == filtros.directores && movie.year == filtros.años && movie.genre_es == filtros.generos;
+                    return movie.direction.includes(filtros.directores) && movie.year == filtros.años && movie.genre_es.includes(filtros.generos);
                 });
                 contar = 0;
                 pintarPeliculas(0)

@@ -2,10 +2,10 @@ $( document ).ready( function() {
     // MULTILANGUAGE (switch)
     $('.check').click( function() {
         if ($('.check').prop('checked') == true) {
-            location.href='https://herreracesar.github.io/movies-website/pages/en/index.html';
+            location.href='./pages/en/index.html';
         }
         else {
-            location.href='https://herreracesar.github.io/movies-website/index.html';
+            location.href='../../index.html';
         }
     });
 
@@ -13,7 +13,7 @@ $( document ).ready( function() {
     $('#trailer').html(`<video src="https://herreracesar.github.io/movies-website/media/trailers/${random(10)}.mp4" autoplay muted loop></video>`);
 
     // AUTOPLAY (portada)
-    if (window.location.href == "https://herreracesar.github.io/movies-website/index.html" || window.location.href == "https://herreracesar.github.io/movies-website/pages/en/index.html") {
+    if (window.location.pathname == "/index.html" || window.location.pathname == "/pages/en/index.html") {
         let video = document.querySelector('video');
         let isPaused = false;
         let observer = new IntersectionObserver((entries) => { 
@@ -71,7 +71,7 @@ $( document ).ready( function() {
             $('#poster').attr('src',`https://herreracesar.github.io/movies-website/media/posters/${origen}.jpg`);
             $('#id').hide().html(`#${movies[origen-1].id}`).fadeIn("slow");
             $('#nombre').hide().html(movies[origen-1].title).slideDown("slow");
-            $('#director').hide().html(movies[origen-1].direction).fadeIn("slow");
+            $('#director').hide().html(movies[origen-1].direction.map((director) => `${director} - `)).fadeIn("slow");
             $('#año').hide().html(movies[origen-1].year).fadeIn("slow");
             $('#imdb').hide().html(movies[origen-1].imdb_score).fadeIn("slow");
             $('#filmaffinity').hide().html(movies[origen-1].filmaffinity_score).fadeIn("slow");
@@ -88,11 +88,13 @@ $( document ).ready( function() {
         });
         
         // ARMADO DE ARRAYS PARA FILTROS
-        var generos = [];
+        let generos = [];
         movies.forEach(movie => {
-            if (!generos.includes(movie.genero)) {
-                generos.push(movie.genero)
-            }
+            movie.genre_es.forEach(genero => {
+                if (!generos.includes(genero)) {
+                    generos.push(genero)
+                }
+            });
         });
         let genres = [
             {
@@ -134,25 +136,17 @@ $( document ).ready( function() {
         ]
         let años = [];
         movies.forEach(movie => {
-            if (!años.includes(movie.año)) {
-                años.push(movie.año)
+            if (!años.includes(movie.year)) {
+                años.push(movie.year)
             }
         });
         let directores = [];
         movies.forEach(movie => {
-            let director = movie.director;
-            if (Array.isArray(director)) {
-                director.forEach(e => {
-                    if (!directores.includes(e)) {
-                        directores.push(e)
-                    }
-                });
-            }
-            else {
+            movie.direction.forEach(director => {
                 if (!directores.includes(director)) {
                     directores.push(director)
                 }
-            }
+            });
         });
         
         // ORDENO OPCIONES DE FILTRO
@@ -190,7 +184,7 @@ $( document ).ready( function() {
             directores: undefined,
             años: undefined,
         };
-        var resultado = [];
+        let resultado = [];
         $('#generosFiltrados').change(function (seleccion) {
             filtros.generos = seleccion.target.value;
             filtrarPeliculas();
@@ -213,7 +207,7 @@ $( document ).ready( function() {
             else if (filtros.directores == undefined && filtros.años == undefined) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.genero == filtros.generos;
+                    return movie.genre_es.includes(filtros.generos)
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -221,7 +215,7 @@ $( document ).ready( function() {
             else if (filtros.generos == undefined && filtros.directores == undefined) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.año == filtros.años;
+                    return movie.year == filtros.años;
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -229,7 +223,7 @@ $( document ).ready( function() {
             else if (filtros.generos == undefined && filtros.años == undefined) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.director == filtros.directores;
+                    return movie.direction.includes(filtros.directores)
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -237,7 +231,7 @@ $( document ).ready( function() {
             else if (filtros.generos == undefined ) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.director == filtros.directores && movie.año == filtros.años;
+                    return movie.direction.includes(filtros.directores) && movie.year == filtros.años;
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -245,7 +239,7 @@ $( document ).ready( function() {
             else if (filtros.años == undefined ) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.director == filtros.directores && movie.genero == filtros.generos;
+                    return movie.direction.includes(filtros.directores) && movie.genre_es.includes(filtros.generos);
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -253,7 +247,7 @@ $( document ).ready( function() {
             else if (filtros.directores == undefined ) {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.genero == filtros.generos && movie.año == filtros.años;
+                    return movie.genre_es.includes(filtros.generos) && movie.year == filtros.años;
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -261,7 +255,7 @@ $( document ).ready( function() {
             else {
                 $('.posters').html('');
                 resultado = movies.filter( (movie) => {
-                    return movie.director == filtros.directores && movie.año == filtros.años && movie.genero == filtros.generos;
+                    return movie.direction.includes(filtros.directores) && movie.year == filtros.años && movie.genre_es.includes(filtros.generos);
                 });
                 contar = 0;
                 pintarPeliculas(0)
@@ -287,10 +281,10 @@ $( document ).ready( function() {
             for (let i = contar; i < longitud; i++) {
                 const movie = resultado[i];
                 $('.posters').append(`
-                                        <a class="movie" href="#" style="background-image: url(https://herreracesar.github.io/movies-website/${movie.poster})">
+                                        <a class="movie" href="#" style="background-image: url(../../${movie.poster})">
                                             <div class="resaltado">
-                                                <p><strong>${movie.titulo}</strong></p>
-                                                <p>${movie.año}</p>
+                                                <p><strong>${movie.title}</strong></p>
+                                                <p>${movie.year}</p>
                                                 <span>#${movie.id}</span>
                                             </div>
                                         </a>

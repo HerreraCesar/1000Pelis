@@ -51,11 +51,11 @@ $( document ).ready( function() {
     }
 
     // OBTENGO ARRAY DE PELICULAS
-    var movies = $.getJSON("https://herreracesar.github.io/movies-website/json/movies.json")
-    movies.done(function(movies){
+    let movies = $.getJSON("https://herreracesar.github.io/movies-website/json/movies.json").done(function(movies) {
+        console.log(movies);
         // PELICULA SEGÚN DÍA (recomendaciones)
         let hoy = new Date();
-        let diaCero = new Date("12/01/2021");
+        let diaCero = new Date("08/01/2022");
         let contador = Math.floor((hoy.getTime() - diaCero.getTime())/86400000)+1;
         if (contador > 1000) {
             let ahora = Date.now();
@@ -66,18 +66,19 @@ $( document ).ready( function() {
         else {
             cargarDatos(contador)
         }
+
         function cargarDatos(origen) {
             $('#poster').attr('src',`https://herreracesar.github.io/movies-website/media/posters/${origen}.jpg`);
             $('#id').hide().html(`#${movies[origen-1].id}`).fadeIn("slow");
-            $('#nombre').hide().html(movies[origen-1].titulo).slideDown("slow");
-            $('#director').hide().html(movies[origen-1].director).fadeIn("slow");
-            $('#año').hide().html(movies[origen-1].año).fadeIn("slow");
-            $('#imdb').hide().html(movies[origen-1].imdb).fadeIn("slow");
-            $('#filmaffinity').hide().html(movies[origen-1].filmaffinity).fadeIn("slow");
-            $('#rottentomatoes').hide().html(movies[origen-1].rottentomatoes).fadeIn("slow");
-            $('#link1').attr('href', movies[origen-1].link1).attr('target','_blank');
-            $('#link2').attr('href', movies[origen-1].link2).attr('target','_blank');
-            $('#link3').attr('href', movies[origen-1].link3).attr('target','_blank')
+            $('#nombre').hide().html(movies[origen-1].title).slideDown("slow");
+            $('#director').hide().html(movies[origen-1].direction).fadeIn("slow");
+            $('#año').hide().html(movies[origen-1].year).fadeIn("slow");
+            $('#imdb').hide().html(movies[origen-1].imdb_score).fadeIn("slow");
+            $('#filmaffinity').hide().html(movies[origen-1].filmaffinity_score).fadeIn("slow");
+            $('#rottentomatoes').hide().html(movies[origen-1].rottentomatoes_score).fadeIn("slow");
+            $('#link1').attr('href', movies[origen-1].imdb_link).attr('target','_blank');
+            $('#link2').attr('href', movies[origen-1].filmaffinity_link).attr('target','_blank');
+            $('#link3').attr('href', movies[origen-1].rottentomatoes_link).attr('target','_blank')
         }
 
         // PELICULA AL AZAR (recomendaciones)

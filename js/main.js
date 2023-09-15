@@ -55,9 +55,9 @@ $( document ).ready( function() {
         console.log(movies);
         // PELICULA SEGÚN DÍA (recomendaciones)
         let hoy = new Date();
-        let diaCero = new Date("08/01/2022");
+        let diaCero = new Date("06/01/2023");
         let contador = Math.floor((hoy.getTime() - diaCero.getTime())/86400000)+1;
-        if (contador > 1000) {
+        if (contador > 200) {
             let ahora = Date.now();
             diaCero = new Date(ahora);
             contador = Math.floor((hoy.getTime() - diaCero.getTime())/86400000)+1;
